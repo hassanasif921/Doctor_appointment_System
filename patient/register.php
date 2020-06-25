@@ -144,19 +144,35 @@ $result=mysqli_query($conn,$query);
    // $images=$_FILES['images']['tmp_name'];
   // $img=addslashes(file_get_contents($images));
     $pname=$_POST['namep'];
-    
     $contactp=$_POST['contact'];
     $usernamep=$_POST['username'];
     $passwordp=$_POST['password'];
     $citypa=$_POST['city'];
     $genderps=$_POST['gender'];
-    $query1="insert into patient(name, city, contact, username, password, Gender) VALUES ($pname,$citypa,$contactp,$usernamep,$passwordp,$genderps)";
+    $query1="insert into patient(name, city, contact, username, password, Gender) VALUES ('$pname','$citypa','$contactp','$usernamep','$passwordp','$genderps')";
    $result1=mysqli_query($conn,$query1);
+   
    if($result1)
    {
-     echo "Successfull";
-   }else{
-     echo "Failed ";
+   
+    $to      = $usernamep;
+    $from      = "hassanasif302672@gmail.com";
+    $headers = 'From: ' .$from . "\r\n" . 'Reply To :' .$from . "\r\n" .'X-Mailer :PHP /' .phpversion();
+    $subject = 'Hospital Management System';
+    $body = 'Hello '.$pname;
     
+    
+    $send = mail($to, $subject, $body, $headers);
+    if($send){
+        echo "Mail Send";
+    }
+    else {
+        echo "mail could not send to $to address";
+    }
+ 
+   }else{
+  
+   $err= mysqli_error($conn);
+   echo $err;
    }
 }?>
