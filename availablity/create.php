@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<?php
- include '../links.php';
-?>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<form>
-  , initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 
 <?php 
  include '../header.php';
@@ -67,10 +55,10 @@ $result=mysqli_query($conn,$query);
       <button type="submit" class="btn btn-primary" name="btnSubmit">Sign in</button>
     </div>
   </div>
-</form>
-</body>
+
 
 <?php
+include "../footer.php";
  if(isset($_POST['btnSubmit']))
 {
    

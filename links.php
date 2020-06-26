@@ -1,13 +1,25 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <!-- adminlogin -->
- <!--===============================================================================================-->	
+ <!--====navbar header=============-->	
 <style>
+
 <?php
 
-    include "assets/adminlogin/fonts/font-awesome-4.7.0/css/font-awesome.min.css"<
+include "assets/Main/css/open-iconic-bootstrap.min.css";
+include "assets/Main/css/animate.css";
+include "assets/Main/css/owl.carousel.min.css";
+include "assets/Main/css/owl.theme.default.min.css";
+include "assets/Main/css/magnific-popup.css";
+include "assets/Main/css/aos.css";
+include "assets/Main/css/ionicons.min.css";
+include "assets/Main/css/bootstrap-datepicker.css";
+include "assets/Main/css/jquery.timepicker.css";
+include "assets/Main/css/flaticon.css";
+include "assets/Main/css/icomoon.css";
+include "assets/Main/css/style.css";
+?>
+<?php
+
+    include "assets/adminlogin/fonts/font-awesome-4.7.0/css/font-awesome.min.css";
     
     include "assets/adminlogin/vendor/animate/animate.css";
     include "assets/adminlogin/vendor/css-hamburgers/hamburgers.min.css";
@@ -30,5 +42,37 @@
   include "assets/adminlogin/vendor/daterangepicker/daterangepicker.js";
   include "assets/adminlogin/vendor/countdowntime/countdowntime.js";
   include "assets/adminlogin/js/main.js";
+
+
+
+
+  include "assets/Main/js/jquery.min.js";
+  include "assets/Main/js/jquery-migrate-3.0.1.min.js";
+  include "assets/Main/js/popper.min.js";
+  include "assets/Main/js/bootstrap.min.js";
+  include "assets/Main/js/jquery.easing.1.3.js";
+  include "assets/Main/js/jquery.waypoints.min.js" ;
+  include "assets/Main/js/jquery.stellar.min.js" ;
+  include "assets/Main/js/owl.carousel.min.js" ;
+  include "assets/Main/js/jquery.magnific-popup.min.js" ;
+  include "assets/Main/js/aos.js";
+  include "assets/Main/js/jquery.animateNumber.min.js";
+  include "assets/Main/js/bootstrap-datepicker.js";
+  include "assets/Main/js/jquery.timepicker.min.js";
+  include "assets/Main/js/scrollax.min.js";
+
+include "assets/Main/js/google-map.js";
+include "assets/Main/js/main.js";
+
     ?>
    </script>
+  
+
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&amp;sensor=false" type="599dbba08183232ed9833eba-text/javascript"></script>
+   <script type="599dbba08183232ed9833eba-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>

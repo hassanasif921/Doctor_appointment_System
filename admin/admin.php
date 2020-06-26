@@ -1,19 +1,10 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Login V14</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php
- include '../links.php';
-?>
-</head>
-<body>
 <?php
 include '../header.php';
 
 ?>
+<br/>
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
@@ -70,11 +61,15 @@ include '../header.php';
 
 	<div id="dropDownSelect1"></div>
 	
+<?php
+include '../footer.php';
+
+?>
+<br/>
 <!--===============================================================================================-->
 	
 
-</body>
-</html>
+
 <?php
 include 'connection.php';
 if(isset($_POST['btnSubmit']))

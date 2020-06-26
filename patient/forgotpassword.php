@@ -1,16 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<?php
+include '../header.php';
+
+?>
+<br>
+<br>
+<br>
+<center>
+<h1 style="color:blue">Forgot Password</h1>
+
+</center>
 <form method="post">
-    <input type="text" name="email" />
-    <input type="submit" name="btnSubmit"/>
+<div class="form-group row">
+    <label for="Named" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="" placeholder="Email" name="email" >
+    </div>
+  </div>
+    <input type="submit" name="btnSubmit" class="btn btn-success"/>
     </form>
-</body>
+    <?php
+include '../footer.php';
+
+?>
 <?php
 include 'connection.php';
 if(isset($_POST['btnSubmit']))
@@ -42,4 +53,3 @@ if(isset($_POST['btnSubmit']))
    }
 }
 ?>
-</html>

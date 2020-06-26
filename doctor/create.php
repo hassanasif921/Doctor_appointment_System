@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<form>
-  , initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<?php
+include '../header.php';
+
+?>
 <?php 
 
 include 'connection.php';
@@ -18,7 +10,12 @@ $result=mysqli_query($conn,$query);
 $query3="Select * from specialist";
 $result2=mysqli_query($conn,$query3);
 ?>
-<h1>Doctor registration</h1>
+<center>
+<h1 style="color:blue">Doctor Registration Form</h1>
+
+</center>
+
+<br>
 <form method="post" enctype="multipart/form-data">
     
   <div class="form-group row">
@@ -46,7 +43,7 @@ $result2=mysqli_query($conn,$query3);
     </div>
   </div>
   <div class="form-group row">
-      <label for="inputState" class="col-sm-2 col-form-label">State</label>
+      <label for="inputState" class="col-sm-2 col-form-label">Specialist</label>
       <div class="col-sm-10">
       <select id="inputState" name="Specialist" class="form-control">
      
@@ -92,8 +89,10 @@ $result2=mysqli_query($conn,$query3);
       <button type="submit" class="btn btn-primary" name="btnSubmit">Sign in</button>
     </div>
   </div>
-</form>
-</body>
+  <?php
+include '../footer.php';
+
+?>
 
 <?php
  if(isset($_POST['btnSubmit']))
