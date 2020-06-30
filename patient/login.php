@@ -1,6 +1,24 @@
-
 <?php
 include '../header.php';
+include 'connection.php';
+if(isset($_POST['btnSubmit']))
+{
+   $usern =$_POST['username'];
+   $pa =$_POST['pass'];
+   $query = "Select * from patient where username='$usern' AND password='$pa'";
+   $result=mysqli_query($conn,$query);
+   $row = mysqli_fetch_array($result);
+   $count = mysqli_num_rows($result);
+   if($count)
+   {
+	   echo "<script>alert('Successfull');</script>";
+	 $_SESSION['pat']=$usern;   
+	 //echo "<script>windows.location(../AllDoctors.php);</script>";
+	header('location: ../AllDoctors.php');
+   }else{
+     echo "Failed ";
+   }
+}
 
 ?>
 
@@ -65,28 +83,4 @@ include '../header.php';
 	<?php
 include '../footer.php';
 
-?>
-<!--===============================================================================================-->
-	
-<?php
-include 'connection.php';
-if(isset($_POST['btnSubmit']))
-{
-   $usern =$_POST['username'];
-   $pa =$_POST['pass'];
-   $query = "Select * from patient where username='$usern' AND password='$pa'";
-   $result=mysqli_query($conn,$query);
-   $row = mysqli_fetch_array($result);
-      
-      
-      $count = mysqli_num_rows($result);
-   if($count)
-   {
-    $_SESSION['pat']=$usern;
-    
-    echo "pass ";
-   }else{
-     echo "Failed ";
-   }
-}
 ?>
