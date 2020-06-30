@@ -1,5 +1,4 @@
 <?php
-include '../header.php';
 include 'connection.php';
 if(isset($_POST['btnSubmit']))
 {
@@ -19,6 +18,7 @@ if(isset($_POST['btnSubmit']))
      echo "Failed ";
    }
 }
+include '../header.php';
 
 ?>
 
