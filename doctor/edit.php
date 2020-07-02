@@ -50,7 +50,7 @@ else{
    echo $err;
    }
 }
-include "../header.php";
+include "../adminpanel.php";
 ?>
 
 <center>
@@ -158,7 +158,7 @@ include "../header.php";
     </div>
   </div>
   <?php
-include '../footer.php';
+include '../adminpanelfooter.php';
 
 ?>
 

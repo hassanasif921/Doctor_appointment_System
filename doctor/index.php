@@ -1,6 +1,5 @@
 <?php 
-include "../header.php";
-
+include "../adminpanel.php";
 include 'connection.php';
 $query="Select * from doctor";
 $result=mysqli_query($conn,$query);
@@ -43,14 +42,51 @@ $result=mysqli_query($conn,$query);
       ?></td>
       <td>    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" width="80px" height="80px"/>
 </td>
-<?php 
-echo "<td><a href='edit.php?id=".$row['d_id']."'>Edit</a>  |  <a href='Delete.php?id=".$row['d_id']."'>Delete</a></td>";
-?>   
+
+<td><a href='edit.php?id=<?php echo $row['d_id'] ?>' class="btn btn-success ">Edit</a>  | <button class="btn btn-danger btndelete">Delete</button> |<a href='view.php?id=<?php echo $row['d_id'] ?>' class="btn btn-success ">Viiew</a> </td>";
+
 </tr>
         <?php }
         ?> 
   </tbody>
 </table>
-<?php 
-include "../footer.php";
-?>
+<?php include "../adminpanelfooter.php"?>
+
+<div class="modal fade" id="deletemodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="delete.php" method="POST">
+      <div class="modal-body">
+      
+        <input type="hidden" name="delete_id" id="delete_id"> 
+          <h4>Do You Want To Delete This</h4>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+        <button type="submit" name="deletedata" class="btn btn-danger">Yes Delete</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+$(document).ready(function () {
+
+  $('.btndelete').on('click',function () {
+    $('#deletemodel').modal('show');
+    $tr =$(this).closest('tr');
+    var data =$tr.children("td").map(function(){
+      return $(this).text();
+    }).get();
+    console.log(data);
+    $('#delete_id').val(data[0]);
+  });
+});
+</script>

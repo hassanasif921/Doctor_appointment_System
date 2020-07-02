@@ -46,10 +46,7 @@ $resultf=mysqli_query($conn,$queryf);
       <label for="pwd">Patient Name:</label>
       <input type="text" class="form-control" id="pname" placeholder="Enter password" name="pwd" value ="<?php echo $p[1]?>">
     </div>
-    <div class="form-group">
-      <label for="da">Date :</label>
-      <input type="date" class="form-control" id="da" name="datee">
-    </div>
+   
   <div class="form-group row">
       <label for="inputState" class="col-sm-2 col-form-label">Days And Timming</label>
       <div class="col-sm-10">
@@ -69,6 +66,10 @@ $resultf=mysqli_query($conn,$queryf);
                                         
       </select>
       </div>
+    </div>
+    <div class="form-group">
+      <label for="da">Date :</label>
+      <input type="date" class="form-control" id="da" name="datee">
     </div>
     <div class="checkbox">
       <label><input type="checkbox" name="remember"> Remember me</label>
