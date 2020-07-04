@@ -1,4 +1,5 @@
 <?php 
+
 include 'header.php';
 include 'admin/connection.php';
 $id=$_GET['id'];  // getting id from url
@@ -69,7 +70,9 @@ $resultf=mysqli_query($conn,$queryf);
     </div>
     <div class="form-group">
       <label for="da">Date :</label>
-      <input type="date" class="form-control" id="da" name="datee">
+      <input type="text" class="form-control" id="datepicker" name="datee">
+      <p class="name"></p>
+
     </div>
     <div class="checkbox">
       <label><input type="checkbox" name="remember"> Remember me</label>
@@ -78,3 +81,28 @@ $resultf=mysqli_query($conn,$queryf);
     <button type="submit" class="btn btn-default" name ="btnSubmit">Submit</button>
   </form>
 </div>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript"> 
+$( document ).ready(function() {
+            $("#datepicker").datepicker({
+                dateFormat: "dd-mm-yy",
+                onSelect: function(dateText, inst) {
+                    var date = $.datepicker.parseDate(inst.settings.dateFormat || $.datepicker._defaults.dateFormat, dateText, inst.settings);
+                    var dateText = $.datepicker.formatDate("DD", date, inst.settings);
+                   
+                    //Session["datee"] = dateText;
+                   // sessionStorage.setItem("lastname", dateText);
+
+                  // $.post("../sess.php", {"da": sessionStorage.getItem('lastname')});
+                    $("p.name").html( "Day Name= " + dateText ); // Just the day of week
+                   
+                   
+
+                    
+                }
+            });
+        });
+    </script>
+   
