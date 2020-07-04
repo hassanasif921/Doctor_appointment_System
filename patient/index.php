@@ -1,21 +1,23 @@
 <?php 
-include "../header.php";
+
 include 'connection.php';
-$query="Select * from doctor";
+$query="Select * from patient";
 $result=mysqli_query($conn,$query);
+?>
+<?php 
+include "../adminpanel.php";
 ?>
 <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Password</th>
       <th scope="col">City</th>
-      <th scope="col">Education</th>
-      <th scope="col">Specialization</th>
-      <th scope="col">Image</th>
-      <th scope="col">Action</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Username</th>
+      <th scope="col">Password</th>
+      <th scope="col">Gender</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -23,36 +25,30 @@ $result=mysqli_query($conn,$query);
         {
             ?>
     <tr>
-        <td><?php echo $row['d_id'] ?></td>
-        <td><?php echo $row['d_name']?></td>
-        <td><?php echo $row['d_email']?></td>
-      <td><?php echo $row['d_password']?></td>
-      <td><?php 
+        <td><?php echo $row['pid'] ?></td>
+        <td><?php echo $row['name']?></td>
+        <td><?php 
        $query1="select * from city where C_id =".$row['city'];
        $result1=mysqli_query($conn,$query1);
        $row1=mysqli_fetch_row($result1);
       echo $row1[1];
       ?></td>
-      <td><?php echo $row['education']?></td>
-      <td><?php 
-       $query2="select * from specialist where id =".$row['specialization'];
-       $result2=mysqli_query($conn,$query2);
-       $row2=mysqli_fetch_row($result2);
-      echo $row2[1];
-      ?></td>
-      <td>    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" width="80px" height="80px"/>
-</td>
+        <td><?php echo $row['contacts']?></td>
+      <td><?php echo $row['username']?></td>
+     
+      <td><?php echo $row['password']?></td>
+      <td><?php echo $row['Gender']?></td>
 
-<td><a href='edit.php?id=<?php echo $row['d_id'] ?>' class="btn btn-success ">Edit</a>  | <button class="btn btn-danger btndelete">Delete</button> |<a href='view.php?id=<?php echo $row['d_id'] ?>' class="btn btn-success ">Viiew</a> </td>";
+<td><a href='edit.php?id=<?php echo $row['pid'] ?>' class="btn btn-success ">Edit</a>  | <button class="btn btn-danger btndelete">Delete</button> |<a href='view.php?id=<?php echo $row['d_id'] ?>' class="btn btn-success ">Viiew</a> </td>
 
 </tr>
         <?php }
         ?> 
   </tbody>
 </table>
-<?php include "../adminpanelfooter.php"?>
 
-<div class="modal fade" id="deletemodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal " id="deletemodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -76,6 +72,7 @@ $result=mysqli_query($conn,$query);
     </div>
   </div>
 </div>
+<?php include "../adminpanelfooter.php"?>
 <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

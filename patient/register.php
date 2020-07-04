@@ -119,7 +119,7 @@ include '../footer.php';
     $passwordp=$_POST['password'];
     $citypa=$_POST['city'];
     $genderps=$_POST['gender'];
-    $query1="insert into patient(name, city, contact, username, password, Gender) VALUES ('$pname','$citypa','$contactp','$usernamep','$passwordp','$genderps')";
+    $query1="insert into patient(name, city, contacts, username, password, Gender) VALUES ('$pname','$citypa','$contactp','$usernamep','$passwordp','$genderps')";
    $result1=mysqli_query($conn,$query1);
    
    if($result1)

@@ -46,23 +46,24 @@
   </div>
 <script>
 <?php
-  
-  include "adminpanel/vendor/jquery/jquery.min.js";
-  include "adminpanel/vendor/bootstrap/js/bootstrap.bundle.min.js";
 
- // <!-- Core plugin JavaScript-->
- include "adminpanel/vendor/jquery-easing/jquery.easing.min.js";
+//<!-- Bootstrap core JavaScript-->
+include "adminpanel/vendor/jquery/jquery.min.js";
+include "adminpanel/vendor/bootstrap/js/bootstrap.bundle.min.js";
 
- // <!-- Custom scripts for all pages-->
- include "adminpanel/js/sb-admin-2.min.js";
+//<!-- Core plugin JavaScript-->
+include "adminpanel/vendor/jquery-easing/jquery.easing.min.js";
 
- // <!-- Page level plugins -->
- include "adminpanel/vendor/chart.js/Chart.min.js";
+//<!-- Custom scripts for all pages-->
+include "adminpanel/js/sb-admin-2.min.js";
 
- // <!-- Page level custom scripts -->
- include "adminpanel/js/demo/chart-area-demo.js";
+//<!-- Page level plugins -->
+include "adminpanel/vendor/chart.js/Chart.min.js" ;
+
+//<!-- Page level custom scripts -->
+include "adminpanel/js/demo/chart-area-demo.js";
  include "adminpanel/js/demo/chart-pie-demo.js";
-  ?>
+?>
 </script>
 </body>
 
