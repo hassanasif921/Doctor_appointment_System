@@ -3,19 +3,20 @@ session_start();
 include 'connection.php';
 if(isset($_POST['btnSubmit']))
 {
-   $usern =$_POST['username'];
+   $userd =$_POST['username'];
    $pa =$_POST['pass'];
-   $query = "Select * from patient where username='$usern' AND password='$pa'";
+   $query = "Select * from doctor where d_email='$userd' AND d_password='$pa'";
    $result=mysqli_query($conn,$query);
    $row = mysqli_fetch_array($result);
    $count = mysqli_num_rows($result);
    if($count)
    {
 	   echo "<script>alert('Successfull');</script>";
-	 $_SESSION['pat']=$usern;
-	 $_SESSION['citypat']=$row[5];
-	 //echo "<script>windows.location(../AllDoctors.php);</script>";
-	header('location: ../AllDoctors.php');
+     $_SESSION['duser']=$userd;
+     $_SESSION['docid']=$row[0];
+	//echo $_SESSION['docid'];
+     //echo "<script>windows.location(../AllDoctors.php);</script>";	
+     header('location: ../index.php');
    }else{
      echo "Failed ";
    }
@@ -32,7 +33,7 @@ include '../header.php';
 				
 				<form class="login100-form validate-form flex-sb flex-w" method="post">
 					<span class="login100-form-title p-b-32">
-						Patient Login
+						Doctor Login
 					</span>
 
 					<span class="txt1 p-b-11">

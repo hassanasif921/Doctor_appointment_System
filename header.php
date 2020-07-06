@@ -1,4 +1,9 @@
-<?php session_start();?>
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -28,10 +33,12 @@
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style>
+    <link href="assets/Main/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
     <?php
 // patient registration
 include "patient/vendor/mdi-font/css/material-design-iconic-font.min.css"  ;
@@ -47,7 +54,7 @@ include "patient/css/main.css";
 
 
 
-include "assets/Main/fonts/fontello/css/fontello.css";
+//include "assets/Main/fonts/fontello/css/fontello.css";
 include "https://fonts.googleapis.com/css?family=Lato:400,700,900";
 include "https://fonts.googleapis.com/css?family=Damion";
 include "assets/Main/css/animate.min.css";
@@ -66,6 +73,10 @@ include "assets/Main/css/responsive.css";
     include "assets/adminlogin/vendor/daterangepicker/daterangepicker.css";
     include "assets/adminlogin/css/util.css";
 	include "assets/adminlogin/css/main.css";
+
+
+
+  
 
     ?>
     </style>
@@ -127,21 +138,10 @@ include "assets/Main/css/responsive.css";
                             <a href="#" class="openResponsiveMenu icon-menu"></a>
                             <nav id="mainmenu_wrapper" class="menuTopWrap topMenuStyleLine text-center">
                                 <ul id="mainmenu" class="nav sf-menu inited ">
-                                    <li class="menu-item-has-children custom_view_item current-menu-item">
-                                        <a href="#">Home <span class="caret"></span></a>
-                                        <ul class="sub-menu fadeInUp animated">
-                                            <li class="menu-item current-menu-item">
-                                                <a href="index.html">Homepage</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="home-page-2.html">Home Page 2</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="home-page-3.html">Home Page 3</a>
-                                            </li>
-                                        </ul>
+                                <li class="menu-item-type-custom">
+                                        <a href="index.php">Index</a>
                                     </li>
-                                    <li class="menu-item-type-custom menu-item-has-children">
+                                <!--    <li class="menu-item-type-custom menu-item-has-children">
                                         <a href="#">Pages <span class="caret"></span></a>
                                         <ul class="sub-menu fadeInUp animated">
                                             <li class="menu-item">
@@ -160,38 +160,36 @@ include "assets/Main/css/responsive.css";
                                                 <a href="404-2.html">404</a>
                                             </li>
                                         </ul>
+                                    </li>-->
+                                    <li class="menu-item-type-custom">
+                                        <a href="about.php">About Us</a>
                                     </li>
                                     <li class="menu-item-type-custom">
-                                        <a href="services.html">Services</a>
-                                    </li>
-                                    <li class="menu-item-type-custom menu-item-has-children">
-                                        <a href="#">Team <span class="caret"></span></a>
-                                        <ul class="sub-menu fadeInUp animated">
-                                            <li class="menu-item">
-                                                <a href="team.html">Team Members</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="dr-marta-green.html">Dr. Marta Green</a>
-                                            </li>
-                                        </ul>
+                                        <a href="AllDoctors.php">Doctors</a>
                                     </li>
                                     <li class="menu-item-type-custom">
-                                        <a href="gallery.html" class="">Gallery</a>
+                                        <a href="gallery.php" class="">Gallery</a>
                                     </li>
-                                    <li class="menu-item-type-custom menu-item-has-children">
-                                        <a href="#">Blog <span class="caret"></span></a>
-                                        <ul class="sub-menu fadeInUp animated">
-                                            <li class="menu-item">
-                                                <a href="blog.html">Blog</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="masonry.html">Masonry</a>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                    <?php  
+                                       if(isset($_SESSION['duser']))
+                                       {
+                                    ?> 
                                     <li class="menu-item-type-custom">
-                                        <a href="appointment.html">Appointment</a>
+                                        <a href="appointment.html">My Appointment</a>
                                     </li>
+                                    <?php
+                                }
+                                    ?> 
+                                     <?php  
+                                       if(isset($_SESSION['duser']))
+                                       {
+                                    ?> 
+                                    <li class="menu-item-type-custom">
+                                        <a href="doctor/myprofile.php">My Profile</a>
+                                    </li>
+                                    <?php
+                                }
+                                    ?>
                                     <li class="menu-item-type-custom">
                                         <a href="contact.html">Contact</a>
                                     </li>

@@ -2,9 +2,16 @@
 session_start();
 include 'admin/connection.php';
   // getting id from url
-  
-$query="select * from doctor";
+ $id=$_GET['id'];
+
+  $s=isset($_SESSION['citypat']);
+  if($s ){
+  $query="select * from doctor where specialization='$id' AND city='$s'";
 $result=mysqli_query($conn,$query);
+  }
+else{
+  header('location: patient/login.php');
+  }
 
 include 'header.php';
 ?>
@@ -42,7 +49,7 @@ include 'header.php';
     {
 
     ?>
-  <!--  <a href='appoinment.php?id=<?php// echo $row ['d_id'] ?>' class="btn btn-primary">Book Appoinment</a>-->
+    <a href='appoinment.php?id=<?php echo $row ['d_id'] ?>' class="btn btn-primary">Book Appoinment</a>
     <?php
   }
     ?>
@@ -54,14 +61,6 @@ include 'header.php';
              
          ?>   
           </div>
-
-
-
-  
- 
-  
-  
-  
 <?php
 include 'footer.php';
 
