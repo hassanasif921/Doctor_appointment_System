@@ -12,8 +12,11 @@ if(isset($_POST['btnSubmit']))
    if($count)
    {
 	   echo "<script>alert('Successfull');</script>";
-	 $_SESSION['pat']=$usern;
+	 $_SESSION['pat']=$row[0];
+	 
 	 $_SESSION['citypat']=$row[5];
+	 
+
 	 //echo "<script>windows.location(../AllDoctors.php);</script>";
 	header('location: ../AllDoctors.php');
    }else{

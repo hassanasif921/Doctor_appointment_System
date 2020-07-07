@@ -32,7 +32,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -175,7 +176,10 @@ include "assets/Main/css/responsive.css";
                                        {
                                     ?> 
                                     <li class="menu-item-type-custom">
-                                        <a href="appointment.html">My Appointment</a>
+                                        <a href="doctor/myappointments.php">My Appointment</a>
+                                    </li>
+                                    <li class="menu-item-type-custom">
+                                        <a href="doctor/myappointments.php">My Appointment</a>
                                     </li>
                                     <?php
                                 }
