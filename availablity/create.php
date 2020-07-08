@@ -2,12 +2,14 @@
 <?php 
  include '../header.php';
 
-include 'connection.php';
+include '../connection.php';
 $query="Select * from doctor";
 $result=mysqli_query($conn,$query);
+$query1="Select * from dayss";
+$result1=mysqli_query($conn,$query1);
 
 ?>
-<h1>Doctor registration</h1>
+<h1>Doctor Availability</h1>
 <form method="post" enctype="multipart/form-data">
     
   
@@ -31,12 +33,27 @@ $result=mysqli_query($conn,$query);
       </select>
       </div>
     </div>
-    <div class="form-group row">
-    <label for="Named" class="col-sm-2 col-form-label">Days</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="" placeholder="day" name="day">
+   
+  <div class="form-group row">
+      <label for="inputState" class="col-sm-2 col-form-label">Days</label>
+      <div class="col-sm-10">
+      <select id="inputState" name="day" class="form-control">
+     
+                                        <?php
+        while($row1=mysqli_fetch_array($result1))
+        {
+        ?>
+            <option value=<?php echo $row1['Id'];?>>
+            <?php echo $row1['day_name'];?>
+            </option>
+        <?php
+        }
+        ?>
+                                         
+                                        
+      </select>
+      </div>
     </div>
-  </div>
   <div class="form-group row">
     <label for="Named" class="col-sm-2 col-form-label">Start Time</label>
     <div class="col-sm-10">
