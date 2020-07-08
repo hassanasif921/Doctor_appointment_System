@@ -186,12 +186,13 @@ include "../header.php";
       <button type="submit" class="btn btn-primary" name="btnSubmit" >Sign in</button>
     </div>
   </div>
+  </form>
   <?php
-include '../adminpanelfooter.php';
+include '../footer.php';
 
 ?>
 
-</html>
+
 <script>
 function readURL(input) {
   if (input.files && input.files[0]) {
