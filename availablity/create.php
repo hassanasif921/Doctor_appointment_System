@@ -79,4 +79,3 @@ include "../footer.php";
    echo $err;
    }
 }?>
-</html>
