@@ -10,11 +10,11 @@ $query="Select * from city";
 $result=mysqli_query($conn,$query);
 
 ?>
-    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+    <div class="page-wrapper ">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">Event Registration Form</h2>
+                    <h2 class="title">User Registration Form</h2>
                 </div>
                 <div class="card-body">
                     <form method="POST">

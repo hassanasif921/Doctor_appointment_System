@@ -94,9 +94,9 @@ if(!isset($_SESSION['admin']))
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
+            
             <a class="collapse-item" href="../doctor/index.php">All Doctors</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
+            <a class="collapse-item" href="../doctor/create.php">Add Doctor</a>
           </div>
         </div>
       </li>
@@ -106,19 +106,92 @@ if(!isset($_SESSION['admin']))
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
         <i class="fa fa-wrench" aria-hidden="true"></i>
 
-          <span>Utilities</span>
+          <span>Patient Record</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+            <h6 class="collapse-header">Patient Record</h6>
+            <a class="collapse-item" href="../patient/index.php">Index</a>
+            <a class="collapse-item" href="../patient/create.php">Add Patient</a>
           </div>
         </div>
       </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsecity" aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fa fa-wrench" aria-hidden="true"></i>
 
+          <span>City</span>
+        </a>
+        <div id="collapsecity" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">City</h6>
+            <a class="collapse-item" href="../city/index.php">Index</a>
+            <a class="collapse-item" href="../city/create.php">Create</a>
+
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseblog" aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fa fa-wrench" aria-hidden="true"></i>
+
+          <span>Blog</span>
+        </a>
+        <div id="collapseblog" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">City</h6>
+            <a class="collapse-item" href="../blog/index.php">Index</a>
+            <a class="collapse-item" href="../blog/create.php">Create</a>
+
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseavail" aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fa fa-wrench" aria-hidden="true"></i>
+
+          <span>Availabilty</span>
+        </a>
+        <div id="collapseavail" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Availabilty</h6>
+            <a class="collapse-item" href="../availablity/index.php">Index</a>
+            <a class="collapse-item" href="../availablity/create.php">Create</a>
+
+          </div>
+        </div>
+      </li>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsespe" aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fa fa-wrench" aria-hidden="true"></i>
+
+          <span>Specialist</span>
+        </a>
+        <div id="collapsespe" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Specialist</h6>
+            <a class="collapse-item" href="../specialist/index.php">Index</a>
+            <a class="collapse-item" href="../specialist/create.php">Create</a>
+
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsespe" aria-expanded="true" aria-controls="collapseapp">
+        <i class="fa fa-wrench" aria-hidden="true"></i>
+
+          <span>Appointment</span>
+        </a>
+        <div id="collapseapp" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Specialist</h6>
+            <a class="collapse-item" href="../specialist/index.php">Index</a>
+            <a class="collapse-item" href="../specialist/create.php">Create</a>
+
+          </div>
+        </div>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
 

@@ -1,5 +1,5 @@
 <?php
-include '../header.php';
+include "../adminpanel.php";
 
 ?>
 <?php 
@@ -90,7 +90,7 @@ $result2=mysqli_query($conn,$query3);
     </div>
   </div>
   <?php
-include '../footer.php';
+include "../adminpanelfooter.php";
 
 ?>
 

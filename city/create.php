@@ -1,10 +1,11 @@
 <?php 
- include '../header.php';
+ include '../adminpanel.php';
 include '../connection.php';
  $query="Select * from city";
 $result=mysqli_query($conn,$query);
 
 ?>
+
 <form method="post">
 
  <div class="form-group row">
@@ -15,13 +16,13 @@ $result=mysqli_query($conn,$query);
   </div>
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary" name="btnSubmit">Sign in</button>
+      <button type="submit" class="btn btn-primary" name="btnSubmit">Create</button>
     </div>
   </div>
 </form>
 
 <?php
-include "../footer.php";
+ include '../adminpanelfooter.php';
  if(isset($_POST['btnSubmit']))
 {
    

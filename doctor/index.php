@@ -1,9 +1,10 @@
 <?php 
-include "../header.php";
+include "../adminpanel.php";
 include 'connection.php';
 $query="Select * from doctor";
 $result=mysqli_query($conn,$query);
 ?>
+<div class="container-fluid">
 <table class="table table-hover">
   <thead>
     <tr>
@@ -43,13 +44,14 @@ $result=mysqli_query($conn,$query);
       <td>    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" width="80px" height="80px"/>
 </td>
 
-<td><a href='edit.php?id=<?php echo $row['d_id'] ?>' class="btn btn-success ">Edit</a>  | <button class="btn btn-danger btndelete">Delete</button> |<a href='view.php?id=<?php echo $row['d_id'] ?>' class="btn btn-success ">Viiew</a> </td>";
+<td><a href='edit.php?id=<?php echo $row['d_id'] ?>' class="btn btn-success ">Edit</a>  | <button class="btn btn-danger btndelete">Delete</button> |<a href='view.php?id=<?php echo $row['d_id'] ?>' class="btn btn-success ">Viiew</a> </td>
 
 </tr>
         <?php }
         ?> 
   </tbody>
 </table>
+</div>
 <?php include "../adminpanelfooter.php"?>
 
 <div class="modal fade" id="deletemodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

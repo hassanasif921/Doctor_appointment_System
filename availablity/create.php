@@ -1,6 +1,6 @@
 
 <?php 
- include '../header.php';
+ include '../adminpanel.php';
 
 include '../connection.php';
 $query="Select * from doctor";
@@ -75,7 +75,7 @@ $result1=mysqli_query($conn,$query1);
 
 
 <?php
-include "../footer.php";
+include "../adminpanelfooter.php";
  if(isset($_POST['btnSubmit']))
 {
    
