@@ -1,5 +1,5 @@
 <?php 
- include '../h.php';
+ include '../adminpanel.php';
 include '../connection.php';
  
 ?>

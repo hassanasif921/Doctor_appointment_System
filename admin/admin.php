@@ -1,5 +1,26 @@
-
 <?php
+session_start();
+include 'connection.php';
+
+if(isset($_POST['btnSubmit']))
+{
+   $usern =$_POST['username'];
+   $pa =$_POST['pass'];
+   $query = "Select * from admin where A_Username='$usern' AND A_password='$pa'";
+   $result=mysqli_query($conn,$query);
+   $row = mysqli_fetch_array($result);
+      
+      
+      $count = mysqli_num_rows($result);
+   if($count)
+   {
+    $_SESSION['admin']=$usern;
+    
+	header('Location:index.php');
+   }else{
+     echo "Failed ";
+   }
+}
 include '../header.php';
 
 ?>
@@ -68,27 +89,3 @@ include '../footer.php';
 <br/>
 <!--===============================================================================================-->
 	
-
-
-<?php
-include 'connection.php';
-if(isset($_POST['btnSubmit']))
-{
-   $usern =$_POST['username'];
-   $pa =$_POST['pass'];
-   $query = "Select * from admin where A_Username='$usern' AND A_password='$pa'";
-   $result=mysqli_query($conn,$query);
-   $row = mysqli_fetch_array($result);
-      
-      
-      $count = mysqli_num_rows($result);
-   if($count)
-   {
-    $_SESSION['admin']=$usern;
-    
-    echo "pass ";
-   }else{
-     echo "Failed ";
-   }
-}
-?>
