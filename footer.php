@@ -53,28 +53,45 @@
 
  //<!-- Main JS-->
  include "assets/patientregistration/js/global.js";
+
+ include "assets/Main/js/vendor/jquery-1.11.3.min.js";
+ include "assets/Main/js/vendor/bootstrap.min.js";
+
+ include "assets/Main/js/vendor/jquery.appear.js";
+ include "assets/Main/js/vendor/modernizr-2.6.2.min.js";
+
+ include "assets/Main/js/vendor/jquery.ui.totop.js";
+ include "assets/Main/js/vendor/superfish.js";
+ include "assets/Main/js/vendor/jquery.flexslider-min.js";
+ include "assets/Main/js/custom/_form_contact.js";
+ include "assets/Main/js/custom/front.js";
+ include "assets/Main/js/custom/utils.js";
+ include "assets/Main/js/_utils.js";
+
+
+
 ?>
 </script>
 <script type="text/javascript" src="assets/Main/js/vendor/modernizr-2.6.2.min.js"></script>
-    <script type="text/javascript" src="assets/Main/js/vendor/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="assets/Main/js/vendor/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/Main/js/vendor/jquery.appear.js"></script>
+  
+    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src=""></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
     <!-- superfish menu  -->
-    <script type="text/javascript" src="assets/Main/js/vendor/superfish.js"></script>
+    <script type="text/javascript" src=""></script>
 
     <!-- page scrolling -->
-    <script type="text/javascript" src="assets/Main/js/vendor/jquery.ui.totop.js"></script>
+    <script type="text/javascript" src=""></script>
 
     <!-- sliders, filters, carousels -->
-    <script type="text/javascript" src='assets/Main/js/vendor/jquery.flexslider-min.js'></script>
+    <script type="text/javascript" src=''></script>
 
     <!-- custom scripts -->
-    <script type="text/javascript" src="assets/Main/js/custom/front.js"></script>
-    <script type="text/javascript" src="assets/Main/js/_utils.js"></script>
-    <script type="text/javascript" src="assets/Main/js/custom/utils.js"></script>
-    <script type="text/javascript" src="assets/Main/js/custom/_form_contact.js"></script>
+    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src=""></script>
     <script type="text/javascript" src="assets/Main/js/custom/shortcodes_init.js"></script>
 </body>
 

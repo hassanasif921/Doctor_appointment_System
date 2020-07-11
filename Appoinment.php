@@ -13,7 +13,7 @@ $mariz=mysqli_query($conn,$query1); //executing query
 $p=mysqli_fetch_row($mariz);  //fetching data
 
 
-$query2="select * from days ";
+$query2="select * from dayss";
 $dastiyabi=mysqli_query($conn,$query2); //executing query
 //$dastiyab=mysqli_fetch_row($dastiyabi);  //fetching data
 if(isset($_POST['btnSubmit']))
