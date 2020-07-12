@@ -1,12 +1,12 @@
 <?php 
 session_start();
-include 'connection.php';
- $is=$_SESSION['docid']; 
+include '../connection.php';
+
   
-$query="select * from appoinment where D_id=".$is;
+$query="select * from appoinment";
 $result=mysqli_query($conn,$query);
 
-include '../header.php';
+include '../adminpanel.php';
 ?>
 <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
@@ -14,11 +14,10 @@ include '../header.php';
                 <th>Doctor Name</th>
                 <th>Date</th>
                 <th>Day</th>
-                <th>Start Time</th>
-                
                 <th>Patient Name</th>
                 <th>Patient Contact</th>
                 <th>Gender</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -45,17 +44,6 @@ include '../header.php';
     echo $row3[1];
       ?>
                 </td>
-                <td><?php echo $row['Date'] ?></td>
-                
-                <?php 
-      $query5="select * from availabe where id=".$row['Avail_id'];
-      $result5=mysqli_query($conn,$query2);
-      $row5=mysqli_fetch_row($result2);
-      
-    
-    echo $row5[3];
-      ?>
-                </td>
                 <td><?php 
        $query4="select * from patient where pid =".$row['P_id'];
        $result4=mysqli_query($conn,$query4);
@@ -70,6 +58,8 @@ include '../header.php';
       
       echo $row4[5];
       ?></td>
+      <td><a href='delete.php?id=<?php echo $row['Id'] ?>' class="btn btn-danger ">Delete</a> </td>
+
             </tr>
             <?php
         }
@@ -80,16 +70,15 @@ include '../header.php';
             <th>Doctor Name</th>
                 <th>Date</th>
                 <th>Day</th>
-                <th>Start Time</th>
-                
                 <th>Patient Name</th>
                 <th>Patient Contact</th>
                 <th>Gender</th>
+                <th>Delete</th>
             </tr>
         </tfoot>
     </table>
     <?php 
-include "../footer.php";
+include '../adminpanelfooter.php';
 ?>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>

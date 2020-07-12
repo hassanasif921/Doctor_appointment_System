@@ -1,9 +1,9 @@
 <?php 
 session_start();
 include 'connection.php';
- $is=$_SESSION['docid']; 
+ $is=$_SESSION['pat']; 
   
-$query="select * from appoinment where D_id=".$is;
+$query="select * from appoinment where P_id=".$is;
 $result=mysqli_query($conn,$query);
 
 include '../header.php';

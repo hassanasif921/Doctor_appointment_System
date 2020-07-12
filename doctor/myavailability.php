@@ -8,7 +8,10 @@ $result=mysqli_query($conn,$query);
 
 include '../header.php';
 ?>
-<table id="example" class="table table-striped table-bordered" style="width:100%">
+<a class="btn btn-success" href="../availablity/created.php">Add NEW</a>
+<br>
+<div class="container-fluid">
+<table id="example" class="table table-striped table-bordered" style="width:100%;top:200px">
         <thead>
             <tr>
                 <th>Doctor Name</th>
@@ -43,6 +46,8 @@ include '../header.php';
                 <td><?php echo $row['stime'];?></td>
                 <td><?php echo $row['etime'];?></td>
                 <td><a href='editavailability.php?id=<?php echo $row['id'] ?>' class="btn btn-success ">Edit</a></td>
+                <td><a href='del.php?id=<?php echo $row['id'] ?>' class="btn btn-danger ">Delete</a></td>
+
                <?php 
         }
         ?>
@@ -58,6 +63,7 @@ include '../header.php';
             </tr>
         </tfoot>
     </table>
+    </div>
     <?php 
 include "../footer.php";
 ?>

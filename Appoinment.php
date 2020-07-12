@@ -23,17 +23,38 @@ if(isset($_POST['btnSubmit']))
 
 $pname =$p[0];
 $da =$_POST['dt'];
-$queryf ="insert into appoinment(D_id,P_id,Avail_id,Date) VALUES ('$id','$pname','$da','$dat')";
-$resultf=mysqli_query($conn,$queryf);
-  if($resultf)
-   {
-     echo "Successfull";
+$querycheck="select * from appoinment where D_id='$id' AND P_id='$pname' AND Date='$dat'";
+$resultcheck=mysqli_query($conn,$querycheck);
+$rowcheck = mysqli_fetch_array($resultcheck);
+$councheckt = mysqli_num_rows($resultcheck);
+$querycheck1="select * from appoinment where D_id='$id'AND Date='$dat'";
+$resultcheck1=mysqli_query($conn,$querycheck1);
+$rowcheck1 = mysqli_fetch_array($resultcheck1);
+$councheckt1 = mysqli_num_rows($resultcheck1);
+if(!$councheckt){
+  if($councheckt1 < 6){
+  
+    $queryf ="insert into appoinment(D_id,P_id,Avail_id,Date) VALUES ('$id','$pname','$da','$dat')";
+    $resultf=mysqli_query($conn,$queryf);
+   if($resultf)
+     {
+    echo "<script>alert('Thanks !Appointment Create');</script>";
     
-   }else{
-    echo "fail";
-   $err= mysqli_error($conn);
-   echo $err;
-   }
+      }
+      else{
+         echo "fail";
+          $err= mysqli_error($conn);
+         echo $err;
+        }
+      }
+      else {
+        echo "<script>alert('Limit Exceeds');</script>";
+      }
+
+  }
+  else {
+    echo "<script>alert('Appointment Already Created');</script>";
+  }
 }
 
 ?>
@@ -50,7 +71,7 @@ $resultf=mysqli_query($conn,$queryf);
       <input type="text" class="form-control" id="pname" placeholder="Enter password" name="pwd" value ="<?php echo $p[1]?>">
     </div>
    
-  <div class="form-group row">
+    <div class="form-group row">
       <label for="inputState" class="col-sm-2 col-form-label">Days And Timming</label>
       <div class="col-sm-10">
       <select id="daysid"  class="form-control">

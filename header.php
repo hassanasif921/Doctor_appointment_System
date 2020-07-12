@@ -182,7 +182,7 @@ include "assets/Main/css/responsive.css";
                                         <a href="doctor/myappointments.php">My Appointment</a>
                                     </li>
                                     <li class="menu-item-type-custom">
-                                        <a href="doctor/myappointments.php">My Appointment</a>
+                                        <a href="doctor/myavailability.php">My Availability</a>
                                     </li>
                                     <?php
                                 }
@@ -194,8 +194,33 @@ include "assets/Main/css/responsive.css";
                                     <li class="menu-item-type-custom">
                                         <a href="doctor/myprofile.php">My Profile</a>
                                     </li>
+                                    <li class="menu-item-type-custom">
+                                        <a href="logout.php">logout</a>
+                                    </li>
                                     <?php
                                 }
+                                
+                                    ?>
+                                     
+                                     <?php  
+                                       if(isset($_SESSION['pat']))
+                                       {
+                                    ?> 
+                                    <li class="menu-item-type-custom">
+                                        <a href="specialist.php">Find Specialist/Book Appointment</a>
+                                    </li>
+                                    <li class="menu-item-type-custom">
+                                        <a href="patient/myappointment.php">My Appointment</a>
+                                    </li>
+                                    <li class="menu-item-type-custom">
+                                        <a href="patient/myprofile.php">My Profile</a>
+                                    </li>
+                                    <li class="menu-item-type-custom">
+                                        <a href="logout.php">logout</a>
+                                    </li>
+                                    <?php
+                                }
+                                
                                     ?>
                                     <li class="menu-item-type-custom">
                                         <a href="contact.html">Contact</a>
