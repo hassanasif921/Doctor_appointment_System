@@ -36,7 +36,7 @@ else{
     $citypa=$_POST['city'];
     $special=$_POST['Specialist'];
     $edu=$_POST['education'];
-    $query1="update doctor set d_name='$dname', d_email='$Emaild', d_password='$pass', city='$citypa', education='$edu',specialization='$special'where d_dd='$id'";
+    $query1="update doctor set d_name='$dname', d_email='$Emaild', d_password='$pass', city='$citypa', education='$edu',specialization='$special'where d_id='$id'";
    $result1=mysqli_query($conn,$query1);
 }
    //INSERT INTO `doctor`(`d_name`, `d_email`, `d_password`, `image`, `city`, `education`, `availabeid`, `specialization`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])

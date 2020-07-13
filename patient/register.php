@@ -30,7 +30,7 @@ $result=mysqli_query($conn,$query);
                             <div class="name">Contact</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="contact">
+                                    <input class="input--style-5" type="text" name="contact" maxlength="11" placeholder="Write Phone Number as 03xxxxxxxxx" pattern="[1-9]{1}[0-9]{9}>
                                 </div>
                             </div>
                         </div>

@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<link rel="stylesheet" href="/resources/demos/style.css" />
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <![endif]-->
@@ -42,6 +41,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@1&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@1&family=Galada&display=swap" rel="stylesheet">
     <link href="assets/Main/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/Main/css/styles.css" rel="stylesheet" type="text/css" media="all" />
+  
+
     <style>
     <?php
 // patient registration
@@ -65,6 +67,8 @@ include "assets/Main/css/animate.min.css";
 include "assets/Main/css/core.portfolio.css";
 include "assets/Main/css/flexslider.css";
 include "assets/Main/css/styles.css" ;
+include "assets/Main/fonts/fontello/css/fontello.css" ;
+
 include "assets/Main/css/responsive.css";
 ?>
 <?php
@@ -173,6 +177,9 @@ include "assets/Main/css/responsive.css";
                                     </li>
                                     <li class="menu-item-type-custom">
                                         <a href="gallery.php" class="">Gallery</a>
+                                    </li>
+                                     <li class="menu-item-type-custom">
+                                        <a href="blog.php" class="">Blog</a>
                                     </li>
                                     <?php  
                                        if(isset($_SESSION['duser']))
