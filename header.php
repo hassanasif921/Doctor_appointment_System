@@ -18,28 +18,25 @@
     <title>Care Group</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <![endif]-->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" type="image/png" href="favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@1&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@1&family=Galada&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@1&family=Galada&display=swap" rel="stylesheet">
+    
     <link href="assets/Main/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" media="all" />
     <link href="assets/Main/css/styles.css" rel="stylesheet" type="text/css" media="all" />
   
@@ -99,7 +96,11 @@ include "assets/Main/css/responsive.css";
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a target="_blank"  href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+<?php
+// $first_part=basename($_SERVER['PHP_SELF'], ".php");
+$first_part=dirname($_SERVER['PHP_SELF']);
 
+?>
     <div id="box_wrapper">
 
         <section id="underheader" class="">
@@ -146,29 +147,13 @@ include "assets/Main/css/responsive.css";
                             <a href="#" class="openResponsiveMenu icon-menu"></a>
                             <nav id="mainmenu_wrapper" class="menuTopWrap topMenuStyleLine text-center">
                                 <ul id="mainmenu" class="nav sf-menu inited ">
-                                <li class="menu-item-type-custom">
+                                <?php
+                                if($first_part=="/doctor-appointment-system")
+                                {
+                                ?>
+                                    <li class="menu-item-type-custom">
                                         <a href="index.php">Index</a>
                                     </li>
-                                <!--    <li class="menu-item-type-custom menu-item-has-children">
-                                        <a href="#">Pages <span class="caret"></span></a>
-                                        <ul class="sub-menu fadeInUp animated">
-                                            <li class="menu-item">
-                                                <a href="about.html">About</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="shortcodes.html">Shortcodes</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="typography.html">Typography</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="single-post.html">Single Post</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="404-2.html">404</a>
-                                            </li>
-                                        </ul>
-                                    </li>-->
                                     <li class="menu-item-type-custom">
                                         <a href="about.php">About Us</a>
                                     </li>
@@ -181,8 +166,27 @@ include "assets/Main/css/responsive.css";
                                      <li class="menu-item-type-custom">
                                         <a href="blog.php" class="">Blog</a>
                                     </li>
-                                    <?php  
-                                       if(isset($_SESSION['duser']))
+<?php
+                                }else if($first_part=="/doctor-appointment-system/admin" || $first_part=="/doctor-appointment-system/doctor"){
+?>
+                                    <li class="menu-item-type-custom">
+                                        <a href="../index.php">Index</a>
+                                    </li>
+                                    <li class="menu-item-type-custom">
+                                        <a href="../about.php">About Us</a>
+                                    </li>
+                                    <li class="menu-item-type-custom">
+                                        <a href="../AllDoctors.php">Doctors</a>
+                                    </li>
+                                    <li class="menu-item-type-custom">
+                                        <a href="../gallery.php" class="">Gallery</a>
+                                    </li>
+                                     <li class="menu-item-type-custom">
+                                        <a href="../blog.php" class="">Blog</a>
+                                    </li>
+                                    <?php
+                                }  
+                                       if(isset($_SESSION['duser'])&&$first_part=="/doctor-appointment-system")
                                        {
                                     ?> 
                                     <li class="menu-item-type-custom">
@@ -191,15 +195,24 @@ include "assets/Main/css/responsive.css";
                                     <li class="menu-item-type-custom">
                                         <a href="doctor/myavailability.php">My Availability</a>
                                     </li>
-                                    <?php
-                                }
-                                    ?> 
-                                     <?php  
-                                       if(isset($_SESSION['duser']))
-                                       {
-                                    ?> 
                                     <li class="menu-item-type-custom">
                                         <a href="doctor/myprofile.php">My Profile</a>
+                                    </li>
+                                    <li class="menu-item-type-custom">
+                                        <a href="logout.php">logout</a>
+                                    </li>
+                                    <?php
+                                }else if(isset($_SESSION['duser'])&&$first_part=="/doctor-appointment-system/doctor")
+                                       {
+                                    ?> 
+                                     <li class="menu-item-type-custom">
+                                        <a href="myappointments.php">My Appointment</a>
+                                    </li>
+                                    <li class="menu-item-type-custom">
+                                        <a href="myavailability.php">My Availability</a>
+                                    </li>
+                                    <li class="menu-item-type-custom">
+                                        <a href="myprofile.php">My Profile</a>
                                     </li>
                                     <li class="menu-item-type-custom">
                                         <a href="logout.php">logout</a>

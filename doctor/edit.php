@@ -18,13 +18,14 @@ $result3=mysqli_query($conn,$query3);
   $img=addslashes(file_get_contents($images1));
   $dname=$_POST['Named'];
   $Emaild=$_POST['Emaild'];
- 
+
   $pass=$_POST['password'];
   $citypa=$_POST['city'];
   $special=$_POST['Specialist'];
   $edu=$_POST['education'];
   $query1="update doctor set d_name='$dname', d_email='$Emaild', d_password='$pass', city='$citypa', education='$edu',specialization='$special',image='$img' where d_id='$id'";
   $result1=mysqli_query($conn,$query1);
+
 }
     
    
@@ -154,7 +155,7 @@ include "../adminpanel.php";
         <br>
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary" name="btnSubmit" >Sign in</button>
+      <button type="submit" class="btn btn-primary" name="btnSubmit" >Update</button>
     </div>
   </div>
   <?php
