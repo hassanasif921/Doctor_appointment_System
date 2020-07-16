@@ -57,19 +57,19 @@ $result1=mysqli_query($conn,$query1);
   <div class="form-group row">
     <label for="Named" class="col-sm-2 col-form-label">Start Time</label>
     <div class="col-sm-10">
-      <input type="Time" class="form-control" id="" placeholder="Time" name="time">
+      <input type="Time" class="form-control" id="" placeholder="Time" name="time" required>
     </div>
   </div>
   <div class="form-group row">
     <label for="Named" class="col-sm-2 col-form-label">End Time</label>
     <div class="col-sm-10">
-      <input type="Time" class="form-control" id="" placeholder="Time" name="etime">
+      <input type="Time" class="form-control" id="" placeholder="Time" name="etime" required>
     </div>
   </div>
  
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary" name="btnSubmit">Sign in</button>
+      <button type="submit" class="btn btn-primary" name="btnSubmit">Create</button>
     </div>
   </div>
 

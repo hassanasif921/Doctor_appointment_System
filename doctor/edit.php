@@ -65,31 +65,31 @@ include "../adminpanel.php";
   <div class="form-group row">
     <label for="Named" class="col-sm-2 col-form-label">Doctor Name</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="" placeholder="Name" name="Named" value="<?php echo $row[1];?>">
+      <input type="text" class="form-control" id="" placeholder="Name" name="Named" value="<?php echo $row[1];?>" required pattern="^[a-zA-Z\s]+$"  title="Numbers Are Not Allowed"> 
     </div>
   </div>
   <div class="form-group row">
     <label for="Named" class="col-sm-2 col-form-label">Doctor Email</label>
     <div class="col-sm-10">
-<input type="email" class="form-control" id="" placeholder="Email" name="Emaild" value="<?php echo $row[2];?>">
+<input type="email" class="form-control" id="" placeholder="Email" name="Emaild" value="<?php echo $row[2];?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$"  title="Valid Email Is required" required>
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
     <div class="col-sm-10">
-      <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password" value="<?php echo $row[3];?>">
+      <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password" value="<?php echo $row[3];?>" required>
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Education</label>
     <div class="col-sm-10">
-      <input type="text" name="education" class="form-control" id="inputPassword3" placeholder="Password" value="<?php echo $row[6];?>">
+      <input type="text" name="education" class="form-control" id="inputPassword3" placeholder="Password" value="<?php echo $row[6];?>" required>
     </div>
   </div>
   <div class="form-group row">
       <label for="inputState" class="col-sm-2 col-form-label">Specialist</label>
       <div class="col-sm-10">
-      <select id="inputState" name="Specialist" class="form-control">
+      <select id="inputState" name="Specialist" class="form-control" required>
      
                                         <?php
         while($row3=mysqli_fetch_array($result3))
@@ -119,7 +119,7 @@ include "../adminpanel.php";
   <div class="form-group row">
       <label for="inputState" class="col-sm-2 col-form-label">State</label>
       <div class="col-sm-10">
-      <select id="inputState" name="city" class="form-control">
+      <select id="inputState" name="city" class="form-control" required>
      
                                      
       <?php

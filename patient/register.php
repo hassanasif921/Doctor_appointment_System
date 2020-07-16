@@ -22,7 +22,7 @@ $result=mysqli_query($conn,$query);
                             <div class="name">Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="namep">
+                                    <input class="input--style-5" type="text" name="namep"  required pattern="^[a-zA-Z\s]+$"  title="Numbers Are Not Allowed"> 
                                 </div>
                             </div>
                         </div>
@@ -30,15 +30,15 @@ $result=mysqli_query($conn,$query);
                             <div class="name">Contact</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="contact" maxlength="11" placeholder="Write Phone Number as 03xxxxxxxxx" pattern="[1-9]{1}[0-9]{9}>
+                                    <input class="input--style-5" type="text" name="contact" maxlength="11" placeholder="Phone Number Should be like 03xxxxxxxxx" pattern="03[0-9]{2}(?!1234567)(?!1111111)(?!7654321)[0-9]{7}" required title="Phone Number Should be like 03xxxxxxxxx">
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">username</div>
+                            <div class="name">Email</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="username">
+                                    <input class="input--style-5" type="email" name="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$"  title="Valid Email Is required" required>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +46,7 @@ $result=mysqli_query($conn,$query);
                             <div class="name">password</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="password" name="password">
+                                    <input class="input--style-5" type="password" name="password" pattern=".{8,}" title="Eight or more characters" required>
                                 </div>
                             </div>
                         </div>
@@ -56,11 +56,13 @@ $result=mysqli_query($conn,$query);
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="city">
+                                        <select name="city" class="input-group" required>
+                                        <option disabled="disabled" selected="selected">Select City</option>
                                         <?php
         while($row=mysqli_fetch_array($result))
         {
         ?>
+
             <option value=<?php echo $row['C_id'];?>>
             <?php echo $row['C_name'];?>
             </option>
@@ -79,7 +81,7 @@ $result=mysqli_query($conn,$query);
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="gender">
+                                        <select name="gender" required>
                                             <option disabled="disabled" selected="selected">Select Gender</option>
                                             <option>Male</option>
                                             <option>Female</option>

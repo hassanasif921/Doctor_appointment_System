@@ -1,8 +1,10 @@
 <?php
+
     if(!isset($_SESSION)) 
     { 
         session_start(); 
     } 
+    $first_part=dirname($_SERVER['PHP_SELF']);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -98,7 +100,6 @@ include "assets/Main/css/responsive.css";
         <![endif]-->
 <?php
 // $first_part=basename($_SERVER['PHP_SELF'], ".php");
-$first_part=dirname($_SERVER['PHP_SELF']);
 
 ?>
     <div id="box_wrapper">
@@ -148,7 +149,7 @@ $first_part=dirname($_SERVER['PHP_SELF']);
                             <nav id="mainmenu_wrapper" class="menuTopWrap topMenuStyleLine text-center">
                                 <ul id="mainmenu" class="nav sf-menu inited ">
                                 <?php
-                                if($first_part=="/doctor-appointment-system")
+                                if($first_part=="/E-project")
                                 {
                                 ?>
                                     <li class="menu-item-type-custom">
@@ -167,7 +168,7 @@ $first_part=dirname($_SERVER['PHP_SELF']);
                                         <a href="blog.php" class="">Blog</a>
                                     </li>
 <?php
-                                }else if($first_part=="/doctor-appointment-system/admin" || $first_part=="/doctor-appointment-system/doctor"){
+                                }else if($first_part=="/E-project/admin" || $first_part=="/E-project/doctor" || $first_part=="/E-project/patient"){
 ?>
                                     <li class="menu-item-type-custom">
                                         <a href="../index.php">Index</a>
@@ -186,7 +187,7 @@ $first_part=dirname($_SERVER['PHP_SELF']);
                                     </li>
                                     <?php
                                 }  
-                                       if(isset($_SESSION['duser'])&&$first_part=="/doctor-appointment-system")
+                                       if(isset($_SESSION['duser'])&&$first_part=="/E-project")
                                        {
                                     ?> 
                                     <li class="menu-item-type-custom">
@@ -202,7 +203,7 @@ $first_part=dirname($_SERVER['PHP_SELF']);
                                         <a href="logout.php">logout</a>
                                     </li>
                                     <?php
-                                }else if(isset($_SESSION['duser'])&&$first_part=="/doctor-appointment-system/doctor")
+                                }else if(isset($_SESSION['duser'])&&$first_part=="/E-project/doctor")
                                        {
                                     ?> 
                                      <li class="menu-item-type-custom">
@@ -215,7 +216,7 @@ $first_part=dirname($_SERVER['PHP_SELF']);
                                         <a href="myprofile.php">My Profile</a>
                                     </li>
                                     <li class="menu-item-type-custom">
-                                        <a href="logout.php">logout</a>
+                                        <a href="../logout.php">logout</a>
                                     </li>
                                     <?php
                                 }
@@ -223,7 +224,7 @@ $first_part=dirname($_SERVER['PHP_SELF']);
                                     ?>
                                      
                                      <?php  
-                                       if(isset($_SESSION['pat']))
+                                       if(isset($_SESSION['pat']) &&$first_part=="/E-project")
                                        {
                                     ?> 
                                     <li class="menu-item-type-custom">
@@ -240,8 +241,24 @@ $first_part=dirname($_SERVER['PHP_SELF']);
                                     </li>
                                     <?php
                                 }
-                                
+                                else if(isset($_SESSION['pat']) &&$first_part=="/E-project/patient"){
+
                                     ?>
+                                    <li class="menu-item-type-custom">
+                                        <a href="../specialist.php">Find Specialist/Book Appointment</a>
+                                    </li>
+                                    <li class="menu-item-type-custom">
+                                        <a href="myappointment.php">My Appointment</a>
+                                    </li>
+                                    <li class="menu-item-type-custom">
+                                        <a href="myprofile.php">My Profile</a>
+                                    </li>
+                                    <li class="menu-item-type-custom">
+                                        <a href="../logout.php">logout</a>
+                                    </li>
+                                    <?php
+                                }
+                                ?>
                                     <li class="menu-item-type-custom">
                                         <a href="contact.html">Contact</a>
                                     </li>

@@ -45,14 +45,15 @@ include "../header.php";
   <div class="form-group row">
     <label for="n" class="col-sm-2 col-form-label">Name</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="paname" id="n"  value="<?php echo $row[1];?>" > 
+      <input type="text" class="form-control" name="paname" id="n"  value="<?php echo $row[1];?>" required pattern="^[a-zA-Z\s]+$"  title="Numbers Are Not Allowed"> 
     </div>
 </div>
     <div class="form-group row">
       <label for="inputState" class="col-sm-2 col-form-label">State</label>
       <div class="col-sm-10">
       <select id="inputState" name="city" class="form-control">
-     
+      <option disabled="disabled" >Select City</option>
+
                                      
       <?php
         while($rowc=mysqli_fetch_array($result2))
@@ -87,20 +88,20 @@ include "../header.php";
     <div class="form-group row">
     <label for="c" class="col-sm-2 col-form-label">Contact</label>
     <div class="col-sm-10">
-      <input type="text" name="contactp" class="form-control" id="c" placeholder="Password" value="<?php echo $row[6];?>">
+      <input type="text" name="contactp" class="form-control" id="c" placeholder="Contact" value="<?php echo $row[6];?>" maxlength="11" placeholder="Phone Number Should be like 03xxxxxxxxx" pattern="03[0-9]{2}(?!1234567)(?!1111111)(?!7654321)[0-9]{7}" required title="Phone Number Should be like 03xxxxxxxxx">
     </div>
   </div> 
   
   <div class="form-group row">
     <label for="e" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm-10">
-      <input name="email" type="Text" class="form-control" id="e" placeholder="Password" value="<?php echo $row[3];?>">
+      <input name="email" type="Text" class="form-control" id="e" placeholder="Email" value="<?php echo $row[3];?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$"  title="Valid Email Is required" required>
     </div>
   </div> 
     <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
     <div class="col-sm-10">
-      <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" value="<?php echo $row[4];?>">
+      <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" value="<?php echo $row[4];?>" pattern=".{8,}" title="Eight or more characters" required>
     </div>
   </div>
   <div class="form-group row">

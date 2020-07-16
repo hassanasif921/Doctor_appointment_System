@@ -4,28 +4,11 @@ include '../connection.php';
  $query="Select * from specialist";
 $result=mysqli_query($conn,$query);
 
-?>
-<form method="post">
 
- <div class="form-group row">
-    <label for="Named" class="col-sm-3 col-form-label">Enter specialization</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="" placeholder="Enter specialization" name="cna">
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary" name="btnSubmit">Enter</button>
-    </div>
-  </div>
-</form>
-
-<?php
-include "../adminpanelfooter.php";
  if(isset($_POST['btnSubmit']))
 {
    
-
+  
     $cname=$_POST['cna'];
     $query1="insert into specialist(specialist) VALUES ('$cname')";
    $result1=mysqli_query($conn,$query1);
@@ -39,3 +22,22 @@ include "../adminpanelfooter.php";
    echo $err;
    }
 }?>
+<form method="post">
+
+ <div class="form-group row">
+    <label for="Named" class="col-sm-3 col-form-label">Enter specialization</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="" placeholder="Enter specialization" name="cna" required pattern="^[a-zA-Z\s]+$"  title="Numbers Are Not Allowed"> 
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary" name="btnSubmit">Enter</button>
+    </div>
+  </div>
+</form>
+
+
+<?php
+include "../adminpanelfooter.php";
+?>

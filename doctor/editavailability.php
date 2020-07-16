@@ -78,13 +78,13 @@ include "../header.php";
     <div class="form-group row">
     <label for="Named" class="col-sm-2 col-form-label">Start Time</label>
     <div class="col-sm-10">
-      <input type="Time" class="form-control" id="" placeholder="Time" name="st" value="<?php echo $row[3];?>">
+      <input type="Time" class="form-control" id="" placeholder="Time" name="st" value="<?php echo $row[3];?>" required>
     </div>
   </div>
   <div class="form-group row">
     <label for="Named" class="col-sm-2 col-form-label">End Time</label>
     <div class="col-sm-10">
-      <input type="Time" class="form-control" id="" placeholder="Time" name="et" value="<?php echo $row[4];?>">
+      <input type="Time" class="form-control" id="" placeholder="Time" name="et" value="<?php echo $row[4];?>" required>
     </div>
   </div>
   <div class="form-group row">
