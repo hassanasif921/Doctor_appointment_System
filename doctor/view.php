@@ -45,6 +45,12 @@ include "../adminpanel.php";
     </div>
   </div>
   <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Fees</label>
+    <div class="col-sm-10">
+      <input type="number" name="fe" class="form-control" id="inputPassword3" placeholder="fees" required value="<?php echo $row[8];?>">
+    </div>
+  </div>
+  <div class="form-group row">
       <label for="inputState" class="col-sm-2 col-form-label">Specialist</label>
       <div class="col-sm-10">
       <input type="text"  class="form-control" id="inputPassword3" placeholder="Password" readonly value="<?php   

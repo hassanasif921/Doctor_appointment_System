@@ -18,7 +18,7 @@ $result3=mysqli_query($conn,$query3);
   $img=addslashes(file_get_contents($images1));
   $dname=$_POST['Named'];
   $Emaild=$_POST['Emaild'];
-
+  $fees=$_POST['fe'];
   $pass=$_POST['password'];
   $citypa=$_POST['city'];
   $special=$_POST['Specialist'];
@@ -32,12 +32,13 @@ $result3=mysqli_query($conn,$query3);
 else{
     $dname=$_POST['Named'];
     $Emaild=$_POST['Emaild'];
-   
+    $fees=$_POST['fe'];
+
     $pass=$_POST['password'];
     $citypa=$_POST['city'];
     $special=$_POST['Specialist'];
     $edu=$_POST['education'];
-    $query1="update doctor set d_name='$dname', d_email='$Emaild', d_password='$pass', city='$citypa', education='$edu',specialization='$special'where d_id='$id'";
+    $query1="update doctor set d_name='$dname', d_email='$Emaild', d_password='$pass', city='$citypa', education='$edu',specialization='$special',fees='$fees' where d_id='$id'";
    $result1=mysqli_query($conn,$query1);
 }
    //INSERT INTO `doctor`(`d_name`, `d_email`, `d_password`, `image`, `city`, `education`, `availabeid`, `specialization`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])
@@ -84,6 +85,12 @@ include "../adminpanel.php";
     <label for="inputPassword3" class="col-sm-2 col-form-label">Education</label>
     <div class="col-sm-10">
       <input type="text" name="education" class="form-control" id="inputPassword3" placeholder="Password" value="<?php echo $row[6];?>" required>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Fees</label>
+    <div class="col-sm-10">
+      <input type="number" name="fe" class="form-control" id="inputPassword3" placeholder="fees" required value="<?php echo $row[8];?>">
     </div>
   </div>
   <div class="form-group row">

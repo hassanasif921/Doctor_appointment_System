@@ -12,6 +12,7 @@ include '../header.php';
         <thead>
             <tr>
                 <th>Doctor Name</th>
+                <th>Fees</th>
                 <th>Date</th>
                 <th>Day</th>
                 <th>Start Time</th>
@@ -31,6 +32,12 @@ include '../header.php';
        $result1=mysqli_query($conn,$query1);
        $row1=mysqli_fetch_row($result1);
       echo $row1[1];
+      ?></td>
+       <td><?php 
+       $query23="select * from doctor where d_id =".$row['D_id'];
+       $result23=mysqli_query($conn,$query23);
+       $row23=mysqli_fetch_row($result23);
+      echo $row23[8];
       ?></td>
                 <td><?php echo $row['Date'] ?></td>
                 <td>
@@ -78,6 +85,7 @@ include '../header.php';
         <tfoot>
             <tr>
             <th>Doctor Name</th>
+            <th>Fees</th>
                 <th>Date</th>
                 <th>Day</th>
                 <th>Start Time</th>

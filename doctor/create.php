@@ -43,6 +43,12 @@ $result2=mysqli_query($conn,$query3);
     </div>
   </div>
   <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Fees</label>
+    <div class="col-sm-10">
+      <input type="number" name="fe" class="form-control" id="inputPassword3" placeholder="fees" required>
+    </div>
+  </div>
+  <div class="form-group row">
       <label for="inputState" class="col-sm-2 col-form-label">Specialist</label>
       <div class="col-sm-10">
       <select id="inputState" name="Specialist" class="form-control" required>
@@ -101,12 +107,12 @@ include "../adminpanelfooter.php";
   $img=addslashes(file_get_contents($images1));
     $dname=$_POST['Named'];
     $Emaild=$_POST['Emaild'];
-   
+    $fees=$_POST['fe'];
     $pass=$_POST['password'];
     $citypa=$_POST['city'];
     $special=$_POST['Specialist'];
     $edu=$_POST['education'];
-    $query1="insert into doctor(d_name, d_email, d_password,  city, education,specialization,image) VALUES ('$dname','$Emaild','$pass','$citypa','$edu','$special','$img')";
+    $query1="insert into doctor(d_name, d_email, d_password,  city, education,specialization,image,fees) VALUES ('$dname','$Emaild','$pass','$citypa','$edu','$special','$img','$fees')";
    $result1=mysqli_query($conn,$query1);
    //INSERT INTO `doctor`(`d_name`, `d_email`, `d_password`, `image`, `city`, `education`, `availabeid`, `specialization`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])
    if($result1)

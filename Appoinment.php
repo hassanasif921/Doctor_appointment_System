@@ -64,18 +64,18 @@ if(!$councheckt){
   <form method = "post">
     <div class="form-group">
       <label for="email">Doctor Name: </label>
-      <input type="text" class="form-control" name="dname" value="<?php echo $doct[1]?>" placeholder="Enter email" name="email">
+      <input type="text" class="form-control" name="dname" value="<?php echo $doct[1]?>" placeholder="Enter email" name="email" readonly="readonly">
     </div>
     <div class="form-group">
       <label for="pwd">Patient Name:</label>
-      <input type="text" class="form-control" id="pname" placeholder="Enter password" name="pwd" value ="<?php echo $p[1]?>">
+      <input type="text" class="form-control" id="pname" placeholder="Enter password" name="pwd" value ="<?php echo $p[1]?>" readonly="readonly">
     </div>
    
     <div class="form-group row">
       <label for="inputState" class="col-sm-2 col-form-label">Days And Timming</label>
       <div class="col-sm-10">
-      <select id="daysid"  class="form-control">
-     
+      <select id="daysid"  class="form-control" required>
+      <option selected="selected" disabled="disabled" >SELECT DAY</option>
                                         <?php
         while($row=mysqli_fetch_array($dastiyabi))
         {
@@ -92,9 +92,9 @@ if(!$councheckt){
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-sm-2 col-form-label">Patient Name:</label>
+      <label class="col-sm-2 col-form-label">Select Day:</label>
       <div class="col-sm-10">
-      <select id="timeee" name="dt" require class="form-control">
+      <select id="timeee" name="dt" required class="form-control">
     <option value="" >Select Day First</option>
     </select>
 </div>
@@ -103,7 +103,7 @@ if(!$councheckt){
     <div class="form-group row">
       <label for="da" class="col-sm-2 col-form-label"> Date :</label>
       <div class="col-sm-10">
-      <input type="text" class="form-control" id="datepicker" name="datee">
+      <input type="text" class="form-control" id="datepicker" name="datee" required >
       </div>
     </div>
     <div class="checkbox">
@@ -128,7 +128,7 @@ if(!$councheckt){
         url:'time.php',
         data:'country_id='+mayday,
         success:function(html){
-            alert(html);
+       //     alert(html);
             $('#timeee').html(html);
          //   $('#city').html('<option value="">Select state first</option>'); 
         }

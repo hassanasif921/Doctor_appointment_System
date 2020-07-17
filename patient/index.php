@@ -39,7 +39,7 @@ include "../adminpanel.php";
       <td><?php echo $row['password']?></td>
       <td><?php echo $row['Gender']?></td>
 
-<td><a href='edit.php?id=<?php echo $row['pid'] ?>' class="btn btn-success ">Edit</a>  | <button class="btn btn-danger btndelete">Delete</button> |<a href='view.php?id=<?php echo $row['d_id'] ?>' class="btn btn-success ">Viiew</a> </td>
+<td><a href='edit.php?id=<?php echo $row['pid'] ?>' class="btn btn-success ">Edit</a>  | <button class="btn btn-danger btndelete">Delete</button> |</td>
 
 </tr>
         <?php }

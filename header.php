@@ -155,9 +155,7 @@ include "assets/Main/css/responsive.css";
                                     <li class="menu-item-type-custom">
                                         <a href="index.php">Index</a>
                                     </li>
-                                    <li class="menu-item-type-custom">
-                                        <a href="about.php">About Us</a>
-                                    </li>
+                                   
                                     <li class="menu-item-type-custom">
                                         <a href="AllDoctors.php">Doctors</a>
                                     </li>
@@ -166,6 +164,9 @@ include "assets/Main/css/responsive.css";
                                     </li>
                                      <li class="menu-item-type-custom">
                                         <a href="blog.php" class="">Blog</a>
+                                    <li class="menu-item-type-custom">
+                                        <a href="contact.php">Contact</a>
+                                    </li>
                                     </li>
 <?php
                                 }else if($first_part=="/E-project/admin" || $first_part=="/E-project/doctor" || $first_part=="/E-project/patient"){
@@ -173,9 +174,7 @@ include "assets/Main/css/responsive.css";
                                     <li class="menu-item-type-custom">
                                         <a href="../index.php">Index</a>
                                     </li>
-                                    <li class="menu-item-type-custom">
-                                        <a href="../about.php">About Us</a>
-                                    </li>
+                                   
                                     <li class="menu-item-type-custom">
                                         <a href="../AllDoctors.php">Doctors</a>
                                     </li>
@@ -184,6 +183,9 @@ include "assets/Main/css/responsive.css";
                                     </li>
                                      <li class="menu-item-type-custom">
                                         <a href="../blog.php" class="">Blog</a>
+                                    <li class="menu-item-type-custom">
+                                        <a href="../contact.php">Contact</a>
+                                    </li>
                                     </li>
                                     <?php
                                 }  
@@ -258,10 +260,98 @@ include "assets/Main/css/responsive.css";
                                     </li>
                                     <?php
                                 }
-                                ?>
-                                    <li class="menu-item-type-custom">
-                                        <a href="contact.html">Contact</a>
-                                    </li>
+                            
+                                
+                                
+                               if($first_part=="/E-project" && !isset($_SESSION['docid']) && !isset($_SESSION['pat'])){
+                                       
+                                       ?>
+                                    <li class="menu-item-type-custom menu-item-has-children">
+                                           <a href="#">login <span class="caret"></span></a>
+                                           <ul class="sub-menu fadeInUp animated">
+                                               <li class="menu-item">
+                                                   <a href="doctor/login.php">Doctor Login</a>
+                                               </li>
+                                               <li class="menu-item">
+                                               <a href="patient/login.php">Patient Login</a>
+                                               </li>
+                                               <li class="menu-item">
+                                                   <a href="admin/admin.php">Admin Login</a>
+                                               </li>
+                                             
+                                           </ul>
+                                          </li>
+                                      <?php 
+                                          }
+                                      ?>
+                                      
+                                                <?php  
+                                          if($first_part=="/E-project/doctor" && !isset($_SESSION['docid']))
+                                          {
+                                       ?>
+                                    <li class="menu-item-type-custom menu-item-has-children">
+                                           <a href="#">login <span class="caret"></span></a>
+                                           <ul class="sub-menu fadeInUp animated">
+                                               <li class="menu-item">
+                                                   <a href="login.php">Doctor Login</a>
+                                               </li>
+                                               <li class="menu-item">
+                                               <a href="../patient/login.php">Patient Login</a>
+                                               </li>
+                                               <li class="menu-item">
+                                                   <a href="../admin/admin.php">Admin Login</a>
+                                               </li>
+                                             
+                                           </ul>
+                                       <li>
+                                      <?php 
+                                          }
+                                      ?>
+                                       <?php  
+                                          if($first_part=="/E-project/admin")
+                                          {
+                                       ?>
+                                    <li class="menu-item-type-custom menu-item-has-children">
+                                           <a href="#">login <span class="caret"></span></a>
+                                           <ul class="sub-menu fadeInUp animated">
+                                               <li class="menu-item">
+                                                   <a href="../doctor/login.php">Doctor Login</a>
+                                               </li>
+                                               <li class="menu-item">
+                                               <a href="../patient/login.php">Patient Login</a>
+                                               </li>
+                                               <li class="menu-item">
+                                                   <a href="admin.php">Admin Login</a>
+                                               </li>
+                                             
+                                           </ul>
+                                       <li>
+                                      <?php 
+                                          }
+                                      ?>
+                                       <?php  
+                                          if($first_part=="/E-project/patient" &&  !isset($_SESSION['pat'])) 
+                                          {
+                                       ?>
+                                    <li class="menu-item-type-custom menu-item-has-children">
+                                           <a href="#">login <span class="caret"></span></a>
+                                           <ul class="sub-menu fadeInUp animated">
+                                               <li class="menu-item">
+                                                   <a href="../doctor/login.php">Doctor Login</a>
+                                               </li>
+                                               <li class="menu-item">
+                                               <a href="/login.php">Patient Login</a>
+                                               </li>
+                                               <li class="menu-item">
+                                                   <a href="../admin/admin.php">Admin Login</a>
+                                               </li>
+                                             
+                                           </ul>
+                                       <li>
+                                      <?php 
+                                          }
+                                      ?>
+                                   
                                 </ul>
                             </nav>
                         </div>

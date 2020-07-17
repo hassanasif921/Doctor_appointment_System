@@ -26,7 +26,7 @@ if(isset($_POST['btnSubmit']))
   echo $err;
   }
 }
-include "../header.php";
+include "../adminpanel.php";
 ?>
 <form method="post" enctype="multipart/form-data">
     

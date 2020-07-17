@@ -40,7 +40,7 @@ include '../adminpanel.php';
                 </td>
                 <td><?php echo $row['stime'];?></td>
                 <td><?php echo $row['etime'];?></td>
-                <td><a href='editavailability.php?id=<?php echo $row['id'] ?>' class="btn btn-success ">Edit</a></td>
+                <td><a href='edit.php?id=<?php echo $row['id'] ?>' class="btn btn-success ">Edit</a></td>
                <?php 
         }
         ?>

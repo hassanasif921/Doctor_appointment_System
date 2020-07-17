@@ -1,8 +1,8 @@
 
 <?php 
 session_start();
- include '../header.php';
-include '../connection.php';
+ include 'header.php';
+include 'connection.php';
 
 $is=$_SESSION['docid']; 
 
@@ -78,7 +78,7 @@ $result1=mysqli_query($conn,$query1);
 
 
 <?php
-include "../adminpanelfooter.php";
+include "footer.php";
  if(isset($_POST['btnSubmit']))
 {
    
@@ -92,7 +92,7 @@ include "../adminpanelfooter.php";
    //INSERT INTO `doctor`(`d_name`, `d_email`, `d_password`, `image`, `city`, `education`, `availabeid`, `specialization`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])
    if($result1)
    {
-     echo "Successfull";
+     echo "<script>alert('Successfull')</script>";
    }else{
     echo "fail";
    $err= mysqli_error($conn);

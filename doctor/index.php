@@ -14,6 +14,7 @@ $result=mysqli_query($conn,$query);
       <th scope="col">Password</th>
       <th scope="col">City</th>
       <th scope="col">Education</th>
+      <th scope="col">Fees</th>
       <th scope="col">Specialization</th>
       <th scope="col">Image</th>
       <th scope="col">Action</th>
@@ -35,6 +36,7 @@ $result=mysqli_query($conn,$query);
       echo $row1[1];
       ?></td>
       <td><?php echo $row['education']?></td>
+      <td><?php echo $row['fees']?></td>
       <td><?php 
        $query2="select * from specialist where id =".$row['specialization'];
        $result2=mysqli_query($conn,$query2);
