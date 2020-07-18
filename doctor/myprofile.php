@@ -13,7 +13,8 @@ $query3="Select * from specialist";
 $result3=mysqli_query($conn,$query3);
  if(isset($_POST['btnSubmit']))
 {
-    if(isset($_POST['imagess'])){
+    if(is_uploaded_file($_FILES['imagess']['tmp_name']))
+    {
     $images1=$_FILES['imagess']['tmp_name'];
 
   $img=addslashes(file_get_contents($images1));

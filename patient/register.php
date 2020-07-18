@@ -62,7 +62,7 @@ $result=mysqli_query($conn,$query);
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <select name="city" class="input-group" required>
-                                        <option disabled="disabled" selected="selected">Select City</option>
+                                        <option value="">Select City</option>
                                         <?php
         while($row=mysqli_fetch_array($result))
         {
@@ -87,7 +87,7 @@ $result=mysqli_query($conn,$query);
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <select name="gender" required>
-                                            <option disabled="disabled" selected="selected">Select Gender</option>
+                                            <option  value="">Select Gender</option>
                                             <option>Male</option>
                                             <option>Female</option>
                                          
@@ -126,7 +126,7 @@ include '../footer.php';
     $passwordp=$_POST['password'];
     $citypa=$_POST['city'];
     $genderps=$_POST['gender'];
-    
+    $querycheck=" SELECT * FROM `patient` WHERE username = '$usernamep'";
 $resultcheck=mysqli_query($conn,$querycheck);
 $rowcheck=mysqli_fetch_array($resultcheck);
 $countc = mysqli_num_rows($resultcheck);
@@ -135,7 +135,7 @@ if($countc >0 )
 {
     
     
-    echo "<script>alert('Ussername Not Available')</script>";
+    echo "<script>alert('Email Not Available')</script>";
 
 }
 else{

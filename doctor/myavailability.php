@@ -44,8 +44,9 @@ include '../header.php';
     echo $row3[1];
       ?>
                 </td>
-                <td><?php echo $row['stime'];?></td>
-                <td><?php echo $row['etime'];?></td>
+                
+                <td><?php echo date("g:i a", strtotime($row['stime']));?></td>
+                <td><?php echo date("g:i a", strtotime($row['etime']));?></td>
                 <td><a href='editavailability.php?id=<?php echo $row['id'] ?>' class="btn btn-success ">Edit</a></td>
                 <td><a href='del.php?id=<?php echo $row['id'] ?>' class="btn btn-danger ">Delete</a></td>
 
