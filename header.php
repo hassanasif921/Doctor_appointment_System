@@ -131,8 +131,8 @@ include "assets/Main/css/responsive.css";
                     <div class="col-sm-12 topWrap">
                         <div class="logo logo_center">
                             <a class="navbar-brand" href="index.html">
-                              <!--  <img class="logo_main" src="assets/Main/images/logo.png" alt="Dentalux logo"> -->
-                                <span class="logo_text">CARE <i>Group</i></span>
+                              <img class="" src="logo.png" alt="Dentalux logo" width="500px">
+                                
                             </a>
                         </div>
                         <div class="bottomWrap">

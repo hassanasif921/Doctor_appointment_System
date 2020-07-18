@@ -8,9 +8,10 @@ $result=mysqli_query($conn,$query);
 
 include '../header.php';
 ?>
+<div class="container">
 <a class="btn btn-success" href="../CreateAvailability.php">Add NEW</a>
 <br>
-<div class="container-fluid">
+
 <table id="example" class="table table-striped table-bordered" style="width:100%;top:200px">
         <thead>
             <tr>
