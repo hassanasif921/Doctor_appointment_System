@@ -1,5 +1,10 @@
 
 <?php
+session_start();
+if(isset($_SESSION['pat']))
+{
+    header('location: ../index.php');
+}
 include '../header.php';
 
 ?>
@@ -121,6 +126,19 @@ include '../footer.php';
     $passwordp=$_POST['password'];
     $citypa=$_POST['city'];
     $genderps=$_POST['gender'];
+    
+$resultcheck=mysqli_query($conn,$querycheck);
+$rowcheck=mysqli_fetch_array($resultcheck);
+$countc = mysqli_num_rows($resultcheck);
+echo $countc;
+if($countc >0 )
+{
+    
+    
+    echo "<script>alert('Ussername Not Available')</script>";
+
+}
+else{
     $query1="insert into patient(name, city, contacts, username, password, Gender) VALUES ('$pname','$citypa','$contactp','$usernamep','$passwordp','$genderps')";
    $result1=mysqli_query($conn,$query1);
    
@@ -136,7 +154,7 @@ include '../footer.php';
     
     $send = mail($to, $subject, $body, $headers);
     if($send){
-        echo "Mail Send";
+        echo "<script>alert(Patient Added')</script>";
     }
     else {
         echo "mail could not send to $to address";
@@ -147,4 +165,5 @@ include '../footer.php';
    $err= mysqli_error($conn);
    echo $err;
    }
+}
 }?>

@@ -118,10 +118,11 @@ if(!$councheckt){
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 <script>
-    var mayday;
+    var mayday ,d ,month , day , output;
     $(document).ready(function(){
         $('#daysid').change(function(){
             mayday=$('#daysid').val();
+           
             if(mayday){
     $.ajax({
         type:'POST',
@@ -139,6 +140,8 @@ if(!$councheckt){
 $(function() {
     $( "#datepicker" ).datepicker(
     {
+      minDate: new Date(),
+      maxDate: 30,
         beforeShowDay: function(d) {
             var day = d.getDay();
             if(mayday==1)

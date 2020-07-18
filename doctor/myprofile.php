@@ -25,7 +25,7 @@ $result3=mysqli_query($conn,$query3);
   $citypa=$_POST['city'];
   $special=$_POST['Specialist'];
   $edu=$_POST['education'];
-  $query1="update doctor set d_name='$dname', d_email='$Emaild', d_password='$pass', city='$citypa', education='$edu',specialization='$special',fees='$fees' where d_id='$id'";
+  $query1="update doctor set d_name='$dname', d_email='$Emaild', d_password='$pass', city='$citypa', education='$edu',specialization='$special',fees='$fees' , image = '$img' where d_id='$id'";
   $result1=mysqli_query($conn,$query1);
 }
     
