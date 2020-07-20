@@ -3,28 +3,32 @@ session_start();
 include 'connection.php';
   // getting id from url
  $id=$_GET['id'];
- $_SESSION['sp']=$id;
- $query1c="select * from city";
+ $_SESSION['citt']=$id;
+ $query1c="select * from specialist";
  $result1c=mysqli_query($conn,$query1c);
   $s=isset($_SESSION['citypat']);
-  
-  $query="select * from doctor where specialization='$id'";
+  if($s ){
+  $query="select * from doctor where specialization='$id' AND city='$s'";
+$result=mysqli_query($conn,$query);
+  }
+else{
+  $query="select * from doctor where city='$id'";
   $result=mysqli_query($conn,$query);
-  
+  }
 
 include 'header.php';
 ?>
  <div class="form-group row">
-      <label for="inputState" class="col-sm-2 col-form-label">Sort Doctor By City</label>
+      <label for="inputState" class="col-sm-2 col-form-label">Sort Doctor By Specialist</label>
       <div class="col-sm-10">
       <select id="daysid" name="city" class="form-control" required>
-     <option selected="selected" disabled="disabled">Select City</option>
+     <option selected="selected" disabled="disabled">Select specialization</option>
                                         <?php
         while($row1c=mysqli_fetch_array($result1c))
         {
         ?>
-            <option value=<?php echo $row1c['C_id'];?>>
-            <?php echo $row1c['C_name'];?>
+            <option value=<?php echo $row1c['id'];?>>
+            <?php echo $row1c['specialist'];?>
             </option>
         <?php
         }
@@ -88,7 +92,7 @@ include 'header.php';
             if(mayday){
     $.ajax({
         type:'POST',
-        url:'filldoctor.php',
+        url:'filldoctorbyspe.php',
         data:'city_id='+mayday,
         success:function(html){
        //     alert(html);

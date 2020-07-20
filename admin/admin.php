@@ -6,7 +6,7 @@ if(isset($_POST['btnSubmit']))
 {
    $usern =$_POST['username'];
    $pa =$_POST['pass'];
-   $query = "Select * from admin where A_Username='$usern' AND A_password='$pa'";
+   $query = "Select * from admin where A_Email='$usern' AND A_password='$pa'";
    $result=mysqli_query($conn,$query);
    $row = mysqli_fetch_array($result);
       

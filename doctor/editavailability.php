@@ -3,6 +3,7 @@
 
 include "connection.php";
 $id=$_GET['id'];
+
 $query="select * from availabe where id=".$id;
 $result = mysqli_query($conn,$query);
 $row =mysqli_fetch_row($result);

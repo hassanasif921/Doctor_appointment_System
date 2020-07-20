@@ -35,14 +35,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@1&family=Galada&display=swap" rel="stylesheet">
+     <?php
+if($first_part=="/E-project")
+{
+    ?>
     
     <link href="assets/Main/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" media="all" />
     <link href="assets/Main/css/styles.css" rel="stylesheet" type="text/css" media="all" />
-  
-
+  <?php
+}
+else
+{
+?>
+ <link href="../assets/Main/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../assets/Main/css/styles.css" rel="stylesheet" type="text/css" media="all" />
+    <?php 
+    }
+    ?>
     <style>
     <?php
 // patient registration
@@ -58,8 +71,11 @@ include "patient/vendor/datepicker/daterangepicker.css" ;
 include "patient/css/main.css";
 
 
-
-//include "assets/Main/fonts/fontello/css/fontello.css";
+ 
+if($first_part=="/E-project")
+{
+    
+include "assets/Main/fonts/fontello/css/fontello.css";
 include "https://fonts.googleapis.com/css?family=Lato:400,700,900";
 include "https://fonts.googleapis.com/css?family=Damion";
 include "assets/Main/css/animate.min.css";
@@ -69,6 +85,20 @@ include "assets/Main/css/styles.css" ;
 include "assets/Main/fonts/fontello/css/fontello.css" ;
 
 include "assets/Main/css/responsive.css";
+}
+else
+{
+    include "../assets/Main/fonts/fontello/css/fontello.css";
+include "https://fonts.googleapis.com/css?family=Lato:400,700,900";
+include "https://fonts.googleapis.com/css?family=Damion";
+include "../assets/Main/css/animate.min.css";
+include "../assets/Main/css/core.portfolio.css";
+include "../assets/Main/css/flexslider.css";
+include "../assets/Main/css/styles.css" ;
+include "../assets/Main/fonts/fontello/css/fontello.css" ;
+
+include "../assets/Main/css/responsive.css";
+}
 ?>
 <?php
 
@@ -104,47 +134,38 @@ include "assets/Main/css/responsive.css";
 ?>
     <div id="box_wrapper">
 
-        <section id="underheader" class="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 topWrap ">
-                        <div class="usermenu_area">
-                            <div class="menuUsItem pull-right">
-                                <div class="timetable_area">
-                                    <span class=""><strong>Mn - St: </strong>8:00am - 9:00pm <strong>Sn: </strong>Closed</span>
-                                </div>
-                            </div>
-                            <div class="menuUsItem pull-left">
-                                <div class="contact_area">
-                                    <i class="icon-cellphone67 icon-rounded"></i>free call<span class="text-separator"></span><a href="tel:+080012345678">0800 123 45 678</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+      
         <header id="header" class="">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 topWrap">
+                    <?php 
+                    if($first_part=="/E-project")
+                    {
+                        ?>
                         <div class="logo logo_center">
                             <a class="navbar-brand" href="index.html">
                               <img class="" src="logo.png" alt="Dentalux logo" width="500px">
                                 
                             </a>
                         </div>
+                    <?php 
+                    }
+                    
+                    else
+                    {
+                        ?>
+                        <div class="logo logo_center">
+                            <a class="navbar-brand" href="../index.html">
+                              <img class="" src="../logo.png" alt="Dentalux logo" width="500px">
+                                
+                            </a>
+                        </div>
+                    <?php 
+                    }
+                    ?>
                         <div class="bottomWrap">
-                            <div class="search" title="Open/close search form">
-                                <div class="searchForm">
-                                    <form role="search" method="get" class="search-form" action="#">
-                                        <input type="text" class="searchField" placeholder="" value="" name="s" title="Search for:">
-                                        <button type="submit" class="searchSubmit" title="Start search"><span class="icoSearch"></span></button>
-                                    </form>
-                                </div>
-                                <div class="ajaxSearchResults"></div>
-                            </div>
+                           
                             <a href="#" class="openResponsiveMenu icon-menu"></a>
                             <nav id="mainmenu_wrapper" class="menuTopWrap topMenuStyleLine text-center">
                                 <ul id="mainmenu" class="nav sf-menu inited ">
@@ -277,10 +298,15 @@ include "assets/Main/css/responsive.css";
                                                </li>
                                                <li class="menu-item">
                                                    <a href="admin/admin.php">Admin Login</a>
+                                                                                                 
+
                                                </li>
                                              
                                            </ul>
                                           </li>
+                                          <li class="menu-item-type-custom">
+                                        <a href="patient/register.php">Register</a>
+                                    </li>
                                       <?php 
                                           }
                                       ?>
@@ -304,6 +330,9 @@ include "assets/Main/css/responsive.css";
                                              
                                            </ul>
                                        <li>
+                                       <li class="menu-item-type-custom">
+                                        <a href="../patient/register.php">Register</a>
+                                    </li>
                                       <?php 
                                           }
                                       ?>
@@ -340,7 +369,7 @@ include "assets/Main/css/responsive.css";
                                                    <a href="../doctor/login.php">Doctor Login</a>
                                                </li>
                                                <li class="menu-item">
-                                               <a href="/login.php">Patient Login</a>
+                                               <a href="login.php">Patient Login</a>
                                                </li>
                                                <li class="menu-item">
                                                    <a href="../admin/admin.php">Admin Login</a>
@@ -348,6 +377,9 @@ include "assets/Main/css/responsive.css";
                                              
                                            </ul>
                                        <li>
+                                       <li class="menu-item-type-custom">
+                                        <a href="register.php">Register</a>
+                                    </li>
                                       <?php 
                                           }
                                       ?>

@@ -140,7 +140,7 @@ include "../header.php";
   
   <div class="form-group row">
     <div class="col-sm-12">
-      <button type="submit" class="btn btn-primary form-control" name="btnSubmit" >Update</button>
+      <button type="submit" class="btn btn-primary" name="btnSubmit" >Update</button>
     </div>
   </div>
 </form>

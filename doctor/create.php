@@ -1,10 +1,32 @@
 <?php
+include 'connection.php';
+
+if(isset($_POST['btnSubmit']))
+{
+    $images1=$_FILES['imagess']['tmp_name'];
+  $img=addslashes(file_get_contents($images1));
+    $dname=$_POST['Named'];
+    $Emaild=$_POST['Emaild'];
+    $fees=$_POST['fe'];
+    $pass=$_POST['password'];
+    $citypa=$_POST['city'];
+    $special=$_POST['Specialist'];
+    $edu=$_POST['education'];
+    $query1="insert into doctor(d_name, d_email, d_password,  city, education,specialization,image,fees) VALUES ('$dname','$Emaild','$pass','$citypa','$edu','$special','$img','$fees')";
+   $result1=mysqli_query($conn,$query1);
+   //INSERT INTO `doctor`(`d_name`, `d_email`, `d_password`, `image`, `city`, `education`, `availabeid`, `specialization`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])
+   if($result1)
+   {
+     echo "Successfull";
+   }else{
+    echo "fail";
+   $err= mysqli_error($conn);
+   echo $err;
+   }
+}
 include "../adminpanel.php";
 
-?>
-<?php 
 
-include 'connection.php';
 $query="Select * from city";
 $result=mysqli_query($conn,$query);
 $query3="Select * from specialist";
@@ -101,27 +123,5 @@ include "../adminpanelfooter.php";
 ?>
 
 <?php
- if(isset($_POST['btnSubmit']))
-{
-    $images1=$_FILES['imagess']['tmp_name'];
-  $img=addslashes(file_get_contents($images1));
-    $dname=$_POST['Named'];
-    $Emaild=$_POST['Emaild'];
-    $fees=$_POST['fe'];
-    $pass=$_POST['password'];
-    $citypa=$_POST['city'];
-    $special=$_POST['Specialist'];
-    $edu=$_POST['education'];
-    $query1="insert into doctor(d_name, d_email, d_password,  city, education,specialization,image,fees) VALUES ('$dname','$Emaild','$pass','$citypa','$edu','$special','$img','$fees')";
-   $result1=mysqli_query($conn,$query1);
-   //INSERT INTO `doctor`(`d_name`, `d_email`, `d_password`, `image`, `city`, `education`, `availabeid`, `specialization`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])
-   if($result1)
-   {
-     echo "Successfull";
-   }else{
-    echo "fail";
-   $err= mysqli_error($conn);
-   echo $err;
-   }
-}?>
+ ?>
 </html>

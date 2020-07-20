@@ -14,7 +14,7 @@ include '../adminpanel.php';
                 <th>Start Time</th>
                 <th>End Time</th>
                 <th>Edit</th>
-                <th>Delete</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -38,8 +38,8 @@ include '../adminpanel.php';
     echo $row3[1];
       ?>
                 </td>
-                <td><?php echo $row['stime'];?></td>
-                <td><?php echo $row['etime'];?></td>
+                <td><?php echo date("g:i a", strtotime($row['stime']));?></td>
+                <td><?php echo date("g:i a", strtotime($row['etime']));?></td>
                 <td><a href='edit.php?id=<?php echo $row['id'] ?>' class="btn btn-success ">Edit</a></td>
                <?php 
         }
@@ -52,12 +52,12 @@ include '../adminpanel.php';
                 <th>Start Time</th>
                 <th>End Time</th>
                 <th>Edit</th>
-                <th>Delete</th>
+            
             </tr>
         </tfoot>
     </table>
     <?php 
-include "../footer.php";
+include "../adminpanelfooter.php";
 ?>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>

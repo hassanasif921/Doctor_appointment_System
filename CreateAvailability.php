@@ -1,6 +1,10 @@
 
 <?php 
 session_start();
+if(!isset($_SESSION['docid']))
+{
+    header("Location:doctor/Login.php");
+}
  include 'header.php';
 include 'connection.php';
 

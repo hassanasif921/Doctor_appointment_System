@@ -1,5 +1,12 @@
 <?php
 session_start();
+if(isset($_SESSION['pat'])){
+  $patient=$_SESSION['pat'];
+
+}
+else {
+  header('location: patient/login.php');
+}
 include 'header.php';
 include 'admin/connection.php';
 $id=$_GET['id'];  // getting id from url
@@ -7,13 +14,13 @@ $_SESSION['dayy']=$id;
 $query="select * from doctor where d_id=".$id;  //getting data from product table based on given id
 $doc=mysqli_query($conn,$query); //executing query
 $doct=mysqli_fetch_row($doc);  //fetching data
-$patient=$_SESSION['pat'];
+
 $query1="select * from patient where pid=".$patient;
 $mariz=mysqli_query($conn,$query1); //executing query
 $p=mysqli_fetch_row($mariz);  //fetching data
 
 
-$query2="select * from dayss";
+$query2="select * from availabe where D_id=".$id;
 $dastiyabi=mysqli_query($conn,$query2); //executing query
 //$dastiyab=mysqli_fetch_row($dastiyabi);  //fetching data
 if(isset($_POST['btnSubmit']))
@@ -60,7 +67,7 @@ if(!$councheckt){
 ?>
 
 <div class="container">
-  <h2>Vertical (basic) form</h2>
+  <h2>Book Appointment</h2>
   <form method = "post">
     <div class="form-group">
       <label for="email">Doctor Name: </label>
@@ -80,8 +87,12 @@ if(!$councheckt){
         while($row=mysqli_fetch_array($dastiyabi))
         {
         ?>
-            <option value=<?php echo $row['Id'];?>>
-         <?php echo $row['day_name'];?>
+            <option value=<?php echo $row['days'];?>>
+         <?php
+         $queryda="Select * from dayss where Id=".$row['days'];
+         $dai=mysqli_query($conn,$queryda); //executing query
+$daii=mysqli_fetch_row($dai); 
+          echo $daii[1];?>
             </option>
         <?php
         }
@@ -106,11 +117,9 @@ if(!$councheckt){
       <input type="text" class="form-control" id="datepicker" name="datee" required >
       </div>
     </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
-    </div>
     
-    <button type="submit" class="btn btn-default" name ="btnSubmit">Submit</button>
+    
+    <button type="submit" class="btn btn-primary" name ="btnSubmit">Create</button>
   </form>
 </div>
 

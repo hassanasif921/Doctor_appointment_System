@@ -29,10 +29,10 @@ $result=mysqli_query($conn,$query);
         
             //if the string doesn't contain any space then it will cut without word basis.
             $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
-            $string .= '... <a href="post.php">Read More</a>';
+            $string .= '... <p >Read More</p>';
         }
         echo $string;?></p>
-        <a href='post.php?id=<?php echo $row['id'] ?>' class="btn btn-primary">Read More</a>     </div>
+        <a href='post.php?id=<?php echo $row['id'] ?>' class="btn btn-success">Read More</a>     </div>
              </div>      
       </div>
       <?php 

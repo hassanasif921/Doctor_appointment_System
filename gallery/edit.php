@@ -9,7 +9,7 @@ $row =mysqli_fetch_row($result);
 
  if(isset($_POST['btnSubmit']))
 {
-    if(isset($_POST['imagess'])){
+    if(is_uploaded_file($_FILES['imagess']['tmp_name'])){
     $images1=$_FILES['imagess']['tmp_name'];
 
   $img=addslashes(file_get_contents($images1));
@@ -61,7 +61,7 @@ include "../adminpanel.php";
         <br>
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary" name="btnSubmit" >Sign in</button>
+      <button type="submit" class="btn btn-primary" name="btnSubmit" >Update</button>
     </div>
   </div>
   <?php
@@ -69,4 +69,3 @@ include '../adminpanelfooter.php';
 
 ?>
 
-</html>

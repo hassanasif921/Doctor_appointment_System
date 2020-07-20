@@ -1,7 +1,10 @@
 
 <?php
 session_start();
-
+if(!isset($_SESSION['docid']))
+{
+    header("Location:Login.php");
+}
 include "connection.php";
 $id=$_SESSION['docid'];
 $query="select * from doctor where d_id=".$id;
@@ -61,7 +64,7 @@ include "../header.php";
 ?>
 
 <center>
-<h1 style="color:blue">Doctor Registration Form</h1>
+<h1 style="color:blue">My Profile</h1>
 
 </center>
 
@@ -195,7 +198,7 @@ include "../header.php";
         <br>
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary" name="btnSubmit" >Sign in</button>
+      <button type="submit" class="btn btn-primary" name="btnSubmit" >Update</button>
     </div>
   </div>
   </form>

@@ -1,8 +1,28 @@
 
 <?php 
- include '../adminpanel.php';
 
 include '../connection.php';
+if(isset($_POST['btnSubmit']))
+{
+   
+    $dname=$_POST['doctor'];
+    $days=$_POST['day'];
+   
+    $STime=$_POST['time'];
+    $ETime=$_POST['etime'];
+    $query1="insert into availabe(D_id	, days, stime,etime) VALUES ('$dname','$days','$STime','$ETime')";
+   $result1=mysqli_query($conn,$query1);
+   //INSERT INTO `doctor`(`d_name`, `d_email`, `d_password`, `image`, `city`, `education`, `availabeid`, `specialization`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])
+   if($result1)
+   { header("Location:index.php");
+   }else{
+    echo "fail";
+   $err= mysqli_error($conn);
+   echo $err;
+   }
+  }
+   include '../adminpanel.php';
+
 $query="Select * from doctor";
 $result=mysqli_query($conn,$query);
 $query1="Select * from dayss";
@@ -76,23 +96,5 @@ $result1=mysqli_query($conn,$query1);
 
 <?php
 include "../adminpanelfooter.php";
- if(isset($_POST['btnSubmit']))
-{
-   
-    $dname=$_POST['doctor'];
-    $days=$_POST['day'];
-   
-    $STime=$_POST['time'];
-    $ETime=$_POST['etime'];
-    $query1="insert into availabe(D_id	, days, stime,etime) VALUES ('$dname','$days','$STime','$ETime')";
-   $result1=mysqli_query($conn,$query1);
-   //INSERT INTO `doctor`(`d_name`, `d_email`, `d_password`, `image`, `city`, `education`, `availabeid`, `specialization`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])
-   if($result1)
-   {
-     echo "Successfull";
-   }else{
-    echo "fail";
-   $err= mysqli_error($conn);
-   echo $err;
-   }
-}?>
+
+?>

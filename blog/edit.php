@@ -9,7 +9,7 @@ $row =mysqli_fetch_row($result);
 
  if(isset($_POST['btnSubmit']))
 {
-    if(isset($_POST['imag'])){
+    if(is_uploaded_file($_FILES['imag']['tmp_name'])){
        
     $images1=$_FILES['imag']['tmp_name'];
     $img1=addslashes(file_get_contents($images1));

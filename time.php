@@ -21,7 +21,7 @@ $dastiyabi=mysqli_query($conn,$query2);
             
         ?>
             <option value=<?php echo $row['id'];?>>
-            <?php echo "(" .$row['stime'] ." - ". $row['etime']. ")" ;?>
+            <?php echo "(" . date("g:i a", strtotime($row['stime'])) ." - ". date("g:i a", strtotime($row['etime'])). ")" ;?>
             </option>
         <?php
         }

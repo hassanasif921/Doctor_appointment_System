@@ -22,7 +22,7 @@ if(isset($_POST['btnSubmit']))
 	 
 
 	 //echo "<script>windows.location(../AllDoctors.php);</script>";
-	header('location: ../AllDoctors.php');
+	header('location: ../index.php');
    }else{
 	echo "<script>alert('Wrong Credentials')</script>";
 

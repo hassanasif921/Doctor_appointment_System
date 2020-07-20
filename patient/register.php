@@ -130,7 +130,7 @@ include '../footer.php';
 $resultcheck=mysqli_query($conn,$querycheck);
 $rowcheck=mysqli_fetch_array($resultcheck);
 $countc = mysqli_num_rows($resultcheck);
-echo $countc;
+
 if($countc >0 )
 {
     
@@ -145,21 +145,7 @@ else{
    if($result1)
    {
    
-    $to      = $usernamep;
-    $from      = "hassanasif302672@gmail.com";
-    $headers = 'From: ' .$from . "\r\n" . 'Reply To :' .$from . "\r\n" .'X-Mailer :PHP /' .phpversion();
-    $subject = 'Hospital Management System';
-    $body = 'Hello '.$pname;
-    
-    
-    $send = mail($to, $subject, $body, $headers);
-    if($send){
-        echo "<script>alert(Patient Added')</script>";
-    }
-    else {
-        echo "mail could not send to $to address";
-    }
- 
+    header('location: login.php');
    }else{
   
    $err= mysqli_error($conn);

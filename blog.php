@@ -55,8 +55,8 @@ $result=mysqli_query($conn,$query);
             $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
             $string .= '... <a href="post.php">Read More</a>';
         }
-        echo $string;?></p>
-                                        <a href="post.php?id=<?php echo $row['id'] ?>" class="btn btn-default">Read More</a>
+      //  echo $string;?></p>
+                                        <a href="post.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Read More</a>
                                     </div>
                                 </div>
                             </article>

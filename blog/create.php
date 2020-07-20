@@ -1,7 +1,32 @@
 <?php 
- include '../adminpanel.php';
 include '../connection.php';
- 
+if(isset($_POST['btnSubmit']))
+{
+    $query="Select * from blog";
+    $result=mysqli_query($conn,$query);
+$images1=$_FILES['imagess']['tmp_name'];
+$img=addslashes(file_get_contents($images1));
+  $heading=$_POST['head'];
+  $cont=$_POST['content'];
+
+$dates= $_POST['da'];
+;
+
+ // $query1="update doctor set d_name='$dname', d_email='$Emaild', d_password='$pass', city='$citypa', education='$edu',specialization='$special',image='$img' where d_dd='$id'";
+ // $result1=mysqli_query($conn,$query1);
+ $query1 ="insert into blog(b_heading,b_content,b_date,image) VALUES ('$heading','$cont', '$dates','$img')";
+ $result1=mysqli_query($conn,$query1);
+ if($result1)
+   {
+    header("Location:index.php");
+   }else{
+    echo "fail";
+   $err= mysqli_error($conn);
+   echo $err;
+   }
+}
+include '../adminpanel.php';
+
 ?>
   <h2>Blog form</h2>
   <form class="form-horizontal" method="post"  enctype="multipart/form-data">
@@ -27,6 +52,13 @@ include '../connection.php';
 
     </div>
   </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Blog Date</label>
+    <div class="col-sm-10">
+    <input type="date" class="form-control" id="da" placeholder="Enter date" name="da">
+
+    </div>
+  </div>
     <div class="form-group">        
       <div class="col-sm-offset-12 col-sm-12">
         <button type="submit" class="btn btn-primary" name="btnSubmit">Submit</button>
@@ -34,27 +66,5 @@ include '../connection.php';
     </div>
   </form>
 <?PHP
-  if(isset($_POST['btnSubmit']))
-{
-    $query="Select * from blog";
-    $result=mysqli_query($conn,$query);
-$images1=$_FILES['imagess']['tmp_name'];
-$img=addslashes(file_get_contents($images1));
-  $heading=$_POST['head'];
-  $cont=$_POST['content'];
-$dates=date("d/m/Y");
-
- // $query1="update doctor set d_name='$dname', d_email='$Emaild', d_password='$pass', city='$citypa', education='$edu',specialization='$special',image='$img' where d_dd='$id'";
- // $result1=mysqli_query($conn,$query1);
- $query1 ="insert into blog(b_heading,b_content,b_date,image) VALUES ('$heading','$cont','$dates','$img')";
- $result1=mysqli_query($conn,$query1);
- if($result1)
-   {
-     echo "Successfull";
-   }else{
-    echo "fail";
-   $err= mysqli_error($conn);
-   echo $err;
-   }
-}
+ 
 ?>

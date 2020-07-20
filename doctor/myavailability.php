@@ -1,5 +1,9 @@
 <?php 
 session_start();
+if(!isset($_SESSION['docid']))
+{
+    header("Location:Login.php");
+}
 include 'connection.php';
  $is=$_SESSION['docid']; 
   

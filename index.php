@@ -74,7 +74,8 @@ $resultser=mysqli_query($conn,$queryservise);
                     <div class="col-md-4 col-sm-6">
                         <div class="sc_services sc_services_style_1">
                           
-                            <h5 class="sc_title "><?php echo $rowservice['specialist']?></h5>
+                        <a href="sdoctor.php?id=<?php echo $rowservice ['id'] ?>"><h5 class="sc_title "><?php echo $rowservice['specialist']?></h5></a>
+
                             
                         </div>
                     </div>
@@ -105,7 +106,7 @@ $resultser=mysqli_query($conn,$queryservise);
                             </div>
                             <div class="team_item_info-container">
                                 <div class="sc_team_item_info">
-                                    <h5 class="sc_team_item_title"><a href="#"><?php echo $rowdoctor['d_name']?></a></h5>
+                                    <h5 class="sc_team_item_title"><a href='profile.php?id=<?php echo $rowdoctor['d_id'] ?>'><?php echo $rowdoctor['d_name']?></a></h5>
 
                                     <div class="sc_team_item_position"><?php 
        $querycity="select * from city where C_id =".$rowdoctor['city'];

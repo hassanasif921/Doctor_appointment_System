@@ -1,5 +1,4 @@
-
-        <footer>
+<footer>
             <div class="copyright_area">
                 <div class="container">
                     <div class="row copy">
@@ -31,7 +30,8 @@
     <script>
 <?php
   //  <!-- libraries -->
-  
+  $first_part=dirname($_SERVER['PHP_SELF']);
+
 
 
    include "assets/adminlogin/vendor/jquery/jquery-3.2.1.min.js";
@@ -53,7 +53,8 @@
 
  //<!-- Main JS-->
  include "assets/patientregistration/js/global.js";
-
+ if($first_part=="/E-project")
+ {
  include "assets/Main/js/vendor/jquery-1.11.3.min.js";
  include "assets/Main/js/vendor/bootstrap.min.js";
 
@@ -67,14 +68,48 @@
  include "assets/Main/js/custom/front.js";
  include "assets/Main/js/custom/utils.js";
  include "assets/Main/js/_utils.js";
-
+ }
+ else
+ {
+    include "../assets/Main/js/vendor/jquery-1.11.3.min.js";
+    include "../assets/Main/js/vendor/bootstrap.min.js";
+   
+    include "../assets/Main/js/vendor/jquery.appear.js";
+    include "../assets/Main/js/vendor/modernizr-2.6.2.min.js";
+   
+    include "../assets/Main/js/vendor/jquery.ui.totop.js";
+    include "../assets/Main/js/vendor/superfish.js";
+    include "../assets/Main/js/vendor/jquery.flexslider-min.js";
+    include "../assets/Main/js/custom/_form_contact.js";
+    include "../assets/Main/js/custom/front.js";
+    include "../assets/Main/js/custom/utils.js";
+    include "../assets/Main/js/_utils.js";
+ }
 
 
 ?>
 </script>
+<?php
+if($first_part=="/E-project")
+{
+    ?>
 <script type="text/javascript" src="assets/Main/js/vendor/modernizr-2.6.2.min.js"></script>
-  
-    <script type="text/javascript" src=""></script>
+<script type="text/javascript" src="assets/Main/js/custom/shortcodes_init.js"></script>
+
+<script type="text/javascript" src="assets/Main/js/custom/shortcodes_init.js"></script>
+
+<?php
+}
+else 
+{
+    ?>
+    <script type="text/javascript" src="assets/Main/js/vendor/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="assets/Main/js/custom/shortcodes_init.js"></script>
+
+<?php 
+}
+?>
+   
     <script type="text/javascript" src=""></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
@@ -92,7 +127,6 @@
     <script type="text/javascript" src=""></script>
     <script type="text/javascript" src=""></script>
     <script type="text/javascript" src=""></script>
-    <script type="text/javascript" src="assets/Main/js/custom/shortcodes_init.js"></script>
 </body>
 
 

@@ -5,16 +5,28 @@ $query="select * from specialist";
 $result=mysqli_query($conn,$query);
 ?>
 
-<div class="row">
-<?php while($row=mysqli_fetch_array($result))
+    <section class="">
+            <div class="container" style="padding-top: 35px;">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h3 class="sc_title margin-bottom-large">specialist</h3>
+                    </div>
+                </div>
+                <div class="row text-center">
+                <?php while($rowservice=mysqli_fetch_array($result))
         {
             ?>
-           
+                    <div class="col-md-4 col-sm-6">
+                        <div class="sc_services sc_services_style_1">
+                          
+                        <a href="sdoctor.php?id=<?php echo $rowservice ['id'] ?>"><h5 class="sc_title "><?php echo $rowservice['specialist']?></h5></a>
 
-      <div class="col-sm-4" style="background-color:yellow; margin-bottom: 10px;border-left:5px solid white;;border-radius: 4px;background-color: #eff6f8; "><a style="font-weight:500;color:#014e78" href="sdoctor.php?id=<?php echo $row ['id'] ?>">   <?php echo $row['specialist'] ?></a></div>
-     
-     <?php 
+                            
+                        </div>
+                    </div>
+                   <?php 
         }
         ?>
-        
-    </div>
+                </div>
+            </div>
+        </section>
