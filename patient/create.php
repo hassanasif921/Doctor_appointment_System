@@ -4,7 +4,7 @@ include "../adminpanel.php";
 ?>
 <?php 
 
-include 'connection.php';
+include '../connection.php';
 $query="Select * from city";
 $result=mysqli_query($conn,$query);
 ?>

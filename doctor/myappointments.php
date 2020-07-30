@@ -4,7 +4,7 @@ if(!isset($_SESSION['docid']))
 {
     header("Location:Login.php");
 }
-include 'connection.php';
+include '../connection.php';
  $is=$_SESSION['docid']; 
   
 $query="select * from appoinment where D_id=".$is;

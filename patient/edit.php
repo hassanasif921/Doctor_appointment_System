@@ -1,7 +1,7 @@
 <?php 
 $id=$_GET['id'];
 
-include 'connection.php';
+include '../connection.php';
 $query="Select * from patient where pid=".$id;
 $result=mysqli_query($conn,$query);
 $row =mysqli_fetch_row($result);

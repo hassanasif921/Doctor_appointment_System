@@ -2,7 +2,7 @@
 session_start();
 $id=$_SESSION['pat']; 
 
-include 'connection.php';
+include '../connection.php';
 $query="Select * from patient where pid=".$id;
 $result=mysqli_query($conn,$query);
 $row =mysqli_fetch_row($result);

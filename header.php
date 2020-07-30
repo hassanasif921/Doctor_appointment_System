@@ -4,7 +4,8 @@
     { 
         session_start(); 
     } 
-    $first_part=dirname($_SERVER['PHP_SELF']);
+    $first_part1=dirname($_SERVER['PHP_SELF']);
+    $first_part="/".basename($first_part1);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->

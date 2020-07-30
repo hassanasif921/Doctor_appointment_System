@@ -1,7 +1,7 @@
 
 <?php
 
-include "connection.php";
+include '../connection.php';
 $id=$_GET['id'];
 
 $query="select * from availabe where id=".$id;

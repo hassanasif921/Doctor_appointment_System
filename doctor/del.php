@@ -1,5 +1,5 @@
 <?php 
-include "connection.php";
+include '../connection.php';
 
 
     $del=$_GET['id'];

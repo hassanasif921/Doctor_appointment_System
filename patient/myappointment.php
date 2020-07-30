@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include 'connection.php';
+include '../connection.php';
  $is=$_SESSION['pat']; 
   
 $query="select * from appoinment where P_id=".$is;

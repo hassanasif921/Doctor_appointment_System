@@ -4,7 +4,7 @@ if(isset($_SESSION['pat']))
 {
     header('location: ../index.php');
 }
-include 'connection.php';
+include '../connection.php';
 if(isset($_POST['btnSubmit']))
 {
    $usern =$_POST['username'];

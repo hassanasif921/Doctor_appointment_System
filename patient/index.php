@@ -1,6 +1,6 @@
 <?php 
 
-include 'connection.php';
+include '../connection.php';
 $query="Select * from patient";
 $result=mysqli_query($conn,$query);
 ?>

@@ -1,6 +1,6 @@
 <?php 
 include "../adminpanel.php";
-include 'connection.php';
+include '../connection.php';
 $query="Select * from doctor";
 $result=mysqli_query($conn,$query);
 ?>

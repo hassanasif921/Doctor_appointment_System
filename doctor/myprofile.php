@@ -5,7 +5,7 @@ if(!isset($_SESSION['docid']))
 {
     header("Location:Login.php");
 }
-include "connection.php";
+include '../connection.php';
 $id=$_SESSION['docid'];
 $query="select * from doctor where d_id=".$id;
 $result = mysqli_query($conn,$query);
